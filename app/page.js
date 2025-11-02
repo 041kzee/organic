@@ -18,16 +18,16 @@ export default function Home() {
       <Header />
       <HeroPage />
       <br></br>
-      <AgricultureSection/><br></br>
-      <WhatweDo/>
-      <Fruits/>
-      <br/>
-      <Gallery/>
-      <Organic/>
+      <AgricultureSection /><br></br>
+      <WhatweDo />
+      <Fruits />
+      <br />
+      <Gallery />
+      <Organic />
 
-      <Contact/>
+      <Contact />
       <Blog />
-      <Footer/>
+      <Footer />
     </>
   );
 }
@@ -41,23 +41,23 @@ function HeroPage() {
           "url('https://i.pinimg.com/736x/1f/c7/bd/1fc7bd20c98e7da43b9b4f3c8720fc1c.jpg')"
       }}
     >
-     
 
-     
+
+
       <div className=" absolute inset-0 flex items-center px-10">
         <div className="text-white ml-40 max-w-xl">
 
-      
+
           <h1 className={`${pacifico.className} text-5xl font-normal leading-tight`}>
             Agriculture & Organic Product Farm
           </h1>
 
           <p className="mt-4 text-lg">
-           Dissuade ecstatic and properly saw entirely sir why <br></br>
-           laughter endeavor. In my jointer horrible<br></br>
-           margaret suitable
+            Dissuade ecstatic and properly saw entirely sir why <br></br>
+            laughter endeavor. In my jointer horrible<br></br>
+            margaret suitable
           </p>
-<br></br><br></br>        <button className=" bg-yellow-600 px-4 py-2 rounded-3xl h-30 w-80 text-2xl hover:bg-green-600 hover:text-white">
+          <br></br><br></br>        <button className=" bg-yellow-600 px-4 py-2 rounded-3xl h-30 w-80 text-2xl hover:bg-green-600 hover:text-white">
             Discover More
           </button>
         </div>
@@ -65,11 +65,11 @@ function HeroPage() {
     </div>
   );
 }
- function AgricultureSection() {
+function AgricultureSection() {
   return (
     <section className="w-full px-10 py-16 flex flex-col lg:flex-row gap-12 items-start relative">
 
-     
+
       <div className="w-full lg:w-1/2 relative">
         <img
           src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fabout%2F1.jpg&w=640&q=75"
@@ -78,7 +78,7 @@ function HeroPage() {
         />
       </div>
 
-      
+
       <div className="w-full lg:w-1/2 relative">
         <h1 className="text-4xl font-bold leading-tight">
           Agriculture & Organic <br />
@@ -98,13 +98,13 @@ function HeroPage() {
           </p>
         </div>
 
-     
+
         <div className="absolute -left-20 top-[350px] z-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
- {/* CARD 1 */}
+            {/* CARD 1 */}
             <div className="bg-[#F6C764] p-8 rounded-lg shadow-xl h-[400px] w-64 flex flex-col">
               <div className="text-4xl mb-4"><img className='h-30 w-30'
-              src='https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F3.png&w=256&q=75'
+                src='https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F3.png&w=256&q=75'
               ></img></div>
               <h3 className="font-bold text-xl leading-tight">
                 100% Guaranteed <br /> Organic Product
@@ -114,10 +114,10 @@ function HeroPage() {
               </p>
             </div>
 
-           
+
             <div className="bg-[#4DA66C] p-8 rounded-lg shadow-xl h-[400px] w-64 text-white flex flex-col">
-             <div className="text-4xl mb-4"><img className='h-30 w-30'
-              src='https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F2.png&w=256&q=75'
+              <div className="text-4xl mb-4"><img className='h-30 w-30'
+                src='https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F2.png&w=256&q=75'
               ></img></div>
               <h3 className="font-bold text-xl leading-tight">
                 Top-Quality Healthy <br /> Foods Production
@@ -136,99 +136,99 @@ function HeroPage() {
 }
 
 
-function WhatweDo(){
-  return(
+function WhatweDo() {
+  return (
     <div>
       <section className="w-full bg-[#e8f1eb] py-20 px-6 lg:px-20 relative overflow-hidden">
-      
-      
-      <img
-        src="barn-removebg-preview.png"
-        alt="Barn"
-        className="hidden lg:block absolute right-0 top-10 w-[450px] opacity-90 pointer-events-none"
-      />
 
-      
-      <div className="text-center mb-14">
-        <h3 className="text-green-600 text-lg font-semibold font-serif">What We Do</h3>
-        <h1 className="text-4xl lg:text-5xl font-bold mt-2">
-          Currently we are <br /> selling organic food
-        </h1>
-      </div>
 
-      {/* Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 relative z-10">
-        
-      
-        <div className="bg-white p-10 rounded-3xl shadow-md">
-          <img
-            src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F2.png&w=750&q=75"
-           
-            className="w-28 h-auto mb-6"
-          />
+        <img
+          src="barn-removebg-preview.png"
+          alt="Barn"
+          className="hidden lg:block absolute right-0 top-10 w-[450px] opacity-90 pointer-events-none"
+        />
 
-          <h2 className="text-xl font-bold">AGRICULTURE</h2>
-          <p className="text-green-600 font-medium text-sm">PRODUCTS</p>
 
-          <p className="text-gray-600 text-sm mt-4 leading-relaxed">
-            Seeing rather her you not esteem men settle genius excuse. Deal say over means age from.
-            Comparison new melancholy son devonshire to the dispatched.
-          </p>
-
-          <button className="mt-6 w-12 h-12 bg-[#F6C764] rounded-full flex items-center justify-center text-xl hover:bg-green-700">
-            ➜
-          </button>
+        <div className="text-center mb-14">
+          <h3 className="text-green-600 text-lg font-semibold font-serif">What We Do</h3>
+          <h1 className="text-4xl lg:text-5xl font-bold mt-2">
+            Currently we are <br /> selling organic food
+          </h1>
         </div>
 
-       
-        <div className="bg-white p-10 rounded-3xl shadow-md">
-          <img
-            src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F3.png&w=750&q=75"
-         
-            className="w-28 h-auto mb-6"
-          />
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 relative z-10">
 
-          <h2 className="text-xl font-bold">FRESH</h2>
-          <p className="text-green-600 font-medium text-sm">VEGETABLES</p>
 
-          <p className="text-gray-600 text-sm mt-4 leading-relaxed">
-            Perring rather her you not esteem men settle genius excuse. Deal say over means age from.Comparison new melancholy son devonshire to the dispatched.
-          </p>
+          <div className="bg-white p-10 rounded-3xl shadow-md">
+            <img
+              src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F2.png&w=750&q=75"
 
-          <button className="mt-6 w-12 h-12 bg-[#F6C764] rounded-full flex items-center justify-center text-xl hover:bg-green-700">
-            ➜
-          </button>
+              className="w-28 h-auto mb-6"
+            />
+
+            <h2 className="text-xl font-bold">AGRICULTURE</h2>
+            <p className="text-green-600 font-medium text-sm">PRODUCTS</p>
+
+            <p className="text-gray-600 text-sm mt-4 leading-relaxed">
+              Seeing rather her you not esteem men settle genius excuse. Deal say over means age from.
+              Comparison new melancholy son devonshire to the dispatched.
+            </p>
+
+            <button className="mt-6 w-12 h-12 bg-[#F6C764] rounded-full flex items-center justify-center text-xl hover:bg-green-700">
+              ➜
+            </button>
+          </div>
+
+
+          <div className="bg-white p-10 rounded-3xl shadow-md">
+            <img
+              src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F3.png&w=750&q=75"
+
+              className="w-28 h-auto mb-6"
+            />
+
+            <h2 className="text-xl font-bold">FRESH</h2>
+            <p className="text-green-600 font-medium text-sm">VEGETABLES</p>
+
+            <p className="text-gray-600 text-sm mt-4 leading-relaxed">
+              Perring rather her you not esteem men settle genius excuse. Deal say over means age from.Comparison new melancholy son devonshire to the dispatched.
+            </p>
+
+            <button className="mt-6 w-12 h-12 bg-[#F6C764] rounded-full flex items-center justify-center text-xl hover:bg-green-700">
+              ➜
+            </button>
+          </div>
+
+          {/* CARD 3 */}
+          <div className="bg-white p-10 rounded-3xl shadow-md">
+            <img
+              src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F4.png&w=750&q=75"
+
+              className="w-28 h-auto mb-6"
+            />
+
+            <h2 className="text-xl font-bold">DAIRY</h2>
+            <p className="text-green-600 font-medium text-sm">PRODUCTS</p>
+
+            <p className="text-gray-600 text-sm mt-4 leading-relaxed">
+              Seeing rather her you not esteem men settle genius excuse. Deal say over means age from.Comparison new melancholy son devonshire to the dispatched.
+            </p>
+
+            <button className="mt-6 w-12 h-12 bg-[#F6C764] rounded-full flex items-center justify-center text-xl hover:bg-green-700">
+              ➜
+            </button>
+          </div>
+
         </div>
 
-        {/* CARD 3 */}
-        <div className="bg-white p-10 rounded-3xl shadow-md">
-          <img
-            src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F4.png&w=750&q=75"
-         
-            className="w-28 h-auto mb-6"
-          />
+      </section>
+      <YouTubeBackground />
 
-          <h2 className="text-xl font-bold">DAIRY</h2>
-          <p className="text-green-600 font-medium text-sm">PRODUCTS</p>
-
-          <p className="text-gray-600 text-sm mt-4 leading-relaxed">
-            Seeing rather her you not esteem men settle genius excuse. Deal say over means age from.Comparison new melancholy son devonshire to the dispatched.
-          </p>
-
-          <button className="mt-6 w-12 h-12 bg-[#F6C764] rounded-full flex items-center justify-center text-xl hover:bg-green-700">
-            ➜
-          </button>
-        </div>
-
-      </div>
-
-    </section>
-    <YouTubeBackground/>
-    
     </div>
   )
 }
- function YouTubeBackground() {
+function YouTubeBackground() {
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* YouTube Iframe */}
@@ -238,40 +238,40 @@ function WhatweDo(){
         allow="autoplay; fullscreen"
       ></iframe>
 
-     
-      
 
-     
+
+
+
       <div className="relative top-16 flex items-center ml-15 h-150">
-      <div className="bg-[#3FAF55] text-white p-12  w-150 ">
-  <h2 className="text-5xl font-bold leading-tight mb-6">
-    Distributors of <br /> Organic Produce
-  </h2>
+        <div className="bg-[#3FAF55] text-white p-12  w-150 ">
+          <h2 className="text-5xl font-bold leading-tight mb-6">
+            Distributors of <br /> Organic Produce
+          </h2>
 
-  <p className="text-white/90 leading-relaxed mb-8">
-    Contrasted dissimilar get joy you instrument out reasonably. Again<br/> keeps at no meant stuff. 
-    To perpetual do existence northward as<br/> difficult preserved daughters. 
-    Continued at up to zealously.
-  </p>
+          <p className="text-white/90 leading-relaxed mb-8">
+            Contrasted dissimilar get joy you instrument out reasonably. Again<br /> keeps at no meant stuff.
+            To perpetual do existence northward as<br /> difficult preserved daughters.
+            Continued at up to zealously.
+          </p>
 
-  <ul className="space-y-3 text-lg">
-    <li className="flex items-center gap-2">
-      <span className="text-xl">✔</span> Modern Agriculture Equipment
-    </li>
-    <li className="flex items-center gap-2">
-      <span className="text-xl">✔</span> Awesome Harvest of Wheat
-    </li>
-    <li className="flex items-center gap-2">
-      <span className="text-xl">✔</span> Fresh Fruits & Vegetables
-    </li>
-  </ul>
-</div>
+          <ul className="space-y-3 text-lg">
+            <li className="flex items-center gap-2">
+              <span className="text-xl">✔</span> Modern Agriculture Equipment
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="text-xl">✔</span> Awesome Harvest of Wheat
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="text-xl">✔</span> Fresh Fruits & Vegetables
+            </li>
+          </ul>
+        </div>
 
       </div>
     </div>
   );
 }
- function Fruits() {
+function Fruits() {
   const fruits = [
     {
       image:
@@ -307,20 +307,20 @@ function WhatweDo(){
 
   return (
     <div className="flex">
-      
-    
+
+
       <img className="h-[600px] w-[600px] object-cover" src="hey.png" />
 
       {/* green fruit */}
       <div className="flex-1 bg-green-900 relative overflow-hidden">
 
-      
+
         <img
           src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2F11.png&w=384&q=75"
           className="absolute bottom-0 right-0 w-56 opacity-70 z-0 pointer-events-none"
         />
 
-       
+
         <div className="relative z-10 grid grid-cols-3 gap-12 mt-14 py-10 px-10">
           {fruits.map((item, index) => (
             <div
@@ -362,7 +362,7 @@ const projects = [
   },
 ];
 
- function Gallery() {
+function Gallery() {
   return (
     <section className="w-full py-16 px-6 md:px-12">
       <div className="text-center mb-12">
@@ -379,7 +379,6 @@ const projects = [
             <img
               src={item.image}
               alt={item.title}
-              fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
 
@@ -393,18 +392,18 @@ const projects = [
             </div>
           </div>
         ))}
-        
+
       </div>
     </section>
   );
 }
 
- function Organic() {
+function Organic() {
   return (
     <section className="w-full py-16 bg-white ml-30">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 items-center px-6">
 
-        
+
         <div className="relative flex justify-center">
           <div className="absolute -bottom-6 -left-6 w-64 h-64 border-4 border-yellow-500"></div>
           <img
@@ -413,7 +412,7 @@ const projects = [
           />
         </div>
 
-       
+
         <div className="space-y-10">
           <div>
             <h2 className="text-2xl font-bold">Pure & Organic</h2>
@@ -434,10 +433,10 @@ const projects = [
           </div>
         </div>
 
-       
+
         <div className="space-y-10 flex flex-col items-center lg:items-start">
 
-         
+
           <div className="flex flex-col items-center">
             <div className="w-32 h-32 relative">
               <svg className="w-full h-full">
@@ -468,7 +467,7 @@ const projects = [
             <p className="mt-2 font-semibold text-black">Organic Solutions</p>
           </div>
 
-          
+
           <div className="flex flex-col items-center">
             <div className="w-32 h-32 relative">
               <svg className="w-full h-full">
@@ -488,7 +487,7 @@ const projects = [
                   strokeWidth="8"
                   fill="none"
                   strokeDasharray="283"
-                  strokeDashoffset="113"  
+                  strokeDashoffset="113"
                   strokeLinecap="round"
                 />
               </svg>
@@ -504,19 +503,19 @@ const projects = [
     </section>
   );
 }
- function Contact() {
+function Contact() {
   return (
     <section className="w-full bg-[#e7f0eb] py-32 relative">
       <div className="max-w-7xl mx-auto relative">
 
-       
+
         <div className="grid grid-cols-1 lg:grid-cols-3">
 
-       
+
           <div className="flex justify-center items-end relative">
             <img
               src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F10.png&w=750&q=75"
-            
+
               className="w-64 lg:w-80 relative z-30 :-mr-0.5"
             />
           </div>
@@ -555,7 +554,7 @@ const projects = [
           </div>
         </div>
 
-       
+
         <div className="absolute top-1/2 left-[40%] transform -translate-y-1/2 -translate-x-1/2 
         bg-white shadow-xl rounded-lg p-10 w-[90%] lg:w-[45%] z-20">
 
@@ -589,7 +588,7 @@ const projects = [
             />
 
             <button className="bg-yellow-500 text-black font-semibold px-6 py-3 rounded-md flex items-center gap-2 hover:bg-yellow-400 transition">
-               Get In Touch
+              Get In Touch
             </button>
           </div>
 
@@ -605,7 +604,7 @@ function Blog() {
 
   return (
     <section className=" ml-30 py-20 bg-white">
-      
+
       <div className="text-center mb-14">
         <p className="text-green-700 font-semibold text-lg">Latest News</p>
         <h2 className="text-3xl md:text-4xl font-bold mt-2">
@@ -615,15 +614,15 @@ function Blog() {
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
 
-        
+
         <div
           className="relative h-[400px]   rounded-xl overflow-hidden shadow-lg cursor-pointer"
           onClick={goToBlog}
         >
           <img
-            src="https://i.pinimg.com/736x/f5/48/98/f5489887f8c39c04ddfae8454f130c11.jpg" 
+            src="https://i.pinimg.com/736x/f5/48/98/f5489887f8c39c04ddfae8454f130c11.jpg"
             className="w-full h-full object-cover bg-gray-200"
-           
+
           />
 
           <div className="absolute inset-0 bg-black/40"></div>
@@ -645,16 +644,16 @@ function Blog() {
           </div>
         </div>
 
-       
+
         <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
 
-         
+
           <div className="cursor-pointer" onClick={goToBlog}>
             <div className="relative">
               <img
-                src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F3.jpg&w=1920&q=75" 
+                src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F3.jpg&w=1920&q=75"
                 className="rounded-xl w-full h-48 object-cover bg-gray-200"
-                
+
               />
 
               <div className="absolute bottom-3 left-3 bg-yellow-400 px-2 py-2 rounded shadow-md">
@@ -681,13 +680,13 @@ function Blog() {
             </button>
           </div>
 
-         
+
           <div className="cursor-pointer" onClick={goToBlog}>
             <div className="relative">
               <img
-                src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F2.jpg&w=1920&q=75" 
+                src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F2.jpg&w=1920&q=75"
                 className="rounded-xl w-full h-48 object-cover bg-gray-200"
-               
+
               />
 
               <div className="absolute bottom-3 left-3 bg-yellow-400 px-2 py-2 rounded shadow-md">
