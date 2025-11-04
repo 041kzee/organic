@@ -2,9 +2,8 @@
 
 export function Header() {
   return (
-    <div className="bg-white w-full">
-
-     <div >
+    // <div className="bg-white w-full">
+    <>
       <div className="bg-green-800 text-white flex flex-row items-center gap-2 p-2 h-10">
         <img
           className="h-5 w-5 ml-9"
@@ -29,43 +28,25 @@ export function Header() {
         </div>
       </div>
 
-     
-      <header className="w-full bg-white shadow fixed top-10 left-0 z-50">
-        <div className="max-w-[1200px] mx-auto flex items-center justify-between p-4">
 
+      <header className="w-full sticky top-0 bg-white z-50 shadow-md">
+        <div className="flex relative flex-row px-12 items-center justify-between py-4">
           <img
             src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Flogo.png&w=828&q=75"
             alt="Logo"
             className="h-12 w-auto"
           />
-
-          
           <div className="hidden md:flex items-center gap-6">
-            <select className="border-none focus:outline-none text-[16px] font-medium">
-              <option>Home</option>
-            </select>
+            <p>Home</p>
+            <p>Pages</p>
+            <p>Projects</p>
+            <p>Services</p>
+            <p>Blog</p>
+            <p>Shop</p>
 
-            <select className="border-none focus:outline-none text-[16px] font-medium">
-              <option>About Us</option>
-            </select>
-
-            <select className="border-none focus:outline-none text-[16px] font-medium">
-              <option>Contact</option>
-            </select>
-
-            <select className="border-none focus:outline-none text-[16px] font-medium">
-              <option>Shop</option>
-              <option>Cart</option>
-            </select>
-
-            <select className="border-none focus:outline-none text-[16px] font-medium">
-              <option>Blog</option>
-              <option>Blog List</option>
-              <option>Blog Details</option>
-            </select>
           </div>
 
-          
+
           <div className="flex items-center gap-4">
             <div className="relative bg-blue-100 p-3 rounded-full cursor-pointer">
               <span className="absolute -top-2 -right-2 bg-yellow-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
@@ -78,12 +59,10 @@ export function Header() {
               Register
             </button>
           </div>
+          <img className="absolute mt-16 inset-0 z-0" src="/header.png"></img>
 
         </div>
       </header>
-
-      </div>
-      <div className="pt-[140px]"></div>
-    </div>
+    </>
   );
 }

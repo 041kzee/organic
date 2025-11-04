@@ -14,8 +14,8 @@ const pacifico = Pacifico({
 
 export default function Home() {
   return (
-    <>
-      <Header />
+    <div>
+      {/* <Header /> */}
       <HeroPage />
       <br></br>
       <AgricultureSection /><br></br>
@@ -28,7 +28,7 @@ export default function Home() {
       <Contact />
       <Blog />
       <Footer />
-    </>
+    </div>
   );
 }
 
