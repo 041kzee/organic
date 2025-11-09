@@ -1,4 +1,5 @@
 "use client"
+import {Header} from "../components/Header.js"
 import PhotoHead from "../components/PhotoHead"
 import { Outfit } from "next/font/google"
 import { useState } from "react"
@@ -130,7 +131,8 @@ const items = [
         "price": "$14.00"
     }
 ]
-
+//--font-default: "Outfit", "sans-serif";
+  //  --font-secondary: "Shadows Into Light Two", "cursive";
 
 
 export default function ContactPage() {
@@ -144,6 +146,7 @@ export default function ContactPage() {
 
     return (
         <div className={`w-full ${outfit.className}`}>
+            <Header/>
             <PhotoHead pageName={"Shop"} imageUrl={"/contact.jpg"} pageHead={"Products"} />
             <div className="bg-[#e9f1ee] dark:bg-black pb-12">
                 <Head drop={drop} setDrop={setDrop} grid={grid} setGrid={setGrid} />

@@ -1,6 +1,6 @@
 "use client"
 import PhotoHead from "../components/PhotoHead"
-import { Header } from "../components/Header"
+
 import { Outfit } from "next/font/google"
 import { useState } from "react"
 

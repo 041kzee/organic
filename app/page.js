@@ -1,21 +1,36 @@
 'use client';
-import { useState } from 'react';
-import { Header } from './/components/Header.js';
+import { useState,useEffect } from 'react';
 import { Footer } from './/components/Footer.js';
+
 
 import "./globals.css";
 import { Pacifico } from "next/font/google";
+import { Outfit } from "next/font/google";
+import { Shadows_Into_Light_Two } from 'next/font/google';
+
+
+
 import { useRouter } from "next/navigation";
+
+const shadow = Shadows_Into_Light_Two({
+subsets:["latin"],
+weight: "400"
+});
 
 const pacifico = Pacifico({
   subsets: ["latin"],
   weight: "400"
 });
 
+const outfit = Outfit({
+    subsets: ["latin"],
+    weight: ["100", "200", "300", "400", "600", "700", "800", "900"]
+});
+
 export default function Home() {
   return (
     <div>
-      {/* <Header /> */}
+      
       <HeroPage />
       <br></br>
       <AgricultureSection /><br></br>
@@ -32,32 +47,83 @@ export default function Home() {
   );
 }
 
+
 function HeroPage() {
+  const images = [
+   {
+    "url": "https://agrica-nextjs.vercel.app/assets/img/banner/4.jpg",
+    "heading": "Homemade Organic Products"},
+   {"url":"https://agrica-nextjs.vercel.app/assets/img/banner/3.jpg",
+    "heading":"Agriculture Farming Products"
+   }
+   ];
+
+  const [index, setIndex] = useState(0);
+
+  const nextSlide = () => {
+    setIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
-    <div
-      className=" w-full h-[500px] bg-cover bg-center relative"
-      style={{
-        backgroundImage:
-          "url('https://i.pinimg.com/736x/1f/c7/bd/1fc7bd20c98e7da43b9b4f3c8720fc1c.jpg')"
-      }}
-    >
+    <div className="relative w-full h-[700px] overflow-hidden">
 
+      {images.map((src, i) => (
+        <div
+          key={i}
+          className={`absolute inset-0 bg-cover bg-center transition-opacity  ${
+            index === i ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ backgroundImage: `url(${src})` }}
+          
+        />
+      ))}
 
+      
+      <div className="absolute inset-0 bg-black/50 z-10 flex items-center">
 
-      <div className=" absolute inset-0 flex items-center px-10">
-        <div className="text-white ml-40 max-w-xl">
+        <button
+          onClick={prevSlide}
+          className="absolute left-5 top-1/2  h-10 w-10 flex flex-col justify-center items-center -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full backdrop-blur-md"
+        >
+          ‹
+        </button>
 
+        <button
+          onClick={nextSlide}
+          className="absolute flex flex-col justify-center items-center  h-10 w-10 right-5 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full backdrop-blur-md"
+        >
+          ›
+        </button>
 
-          <h1 className={`${pacifico.className} text-5xl font-normal leading-tight`}>
-            Agriculture & Organic Product Farm
+       
+        <img
+          className="h-100 mb-70"
+          src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2F2.png&w=750&q=75"
+        />
+
+        <CircleTag />
+
+        
+        <div className="text-white lg:ml-40 mx-auto lg-mr-0 max-w-xl">
+          <h1 className={`${shadow.className} text-8xl font-bold`}>
+            Homemade<br />
+            Organic Product
           </h1>
 
-          <p className="mt-4 text-lg">
-            Dissuade ecstatic and properly saw entirely sir why <br></br>
-            laughter endeavor. In my jointer horrible<br></br>
+          <p className={`${outfit.className} mt-4 text-lg`}>
+            Dissuade ecstatic and properly saw entirely sir why <br />
+            laughter endeavor. In my jointer horrible<br />
             margaret suitable
           </p>
-          <br></br><br></br>        <button className=" bg-yellow-600 px-4 py-2 rounded-3xl h-30 w-80 text-2xl hover:bg-green-600 hover:text-white">
+
+          <br /><br />
+          <button
+            className={`${outfit.className} bg-yellow-500 px-4 py-2 rounded-2xl h-15 text-black w-60 text-2xl hover:bg-green-600 hover:text-white`}
+          >
             Discover More
           </button>
         </div>
@@ -67,58 +133,68 @@ function HeroPage() {
 }
 function AgricultureSection() {
   return (
-    <section className="w-full px-10 py-16 flex flex-col lg:flex-row gap-12 items-start relative">
+    <section className="w-full px-10 py-16 mx-auto flex flex-col lg:flex-row gap-12 items-start relative bg-white dark:bg-gray-800">
 
+     
+      <img
+        src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F1.png&w=256&q=75"
+    
+        className="absolute left-15 top-1/2  hidden lg:block -translate-y-1 w-50  z-30"
+      />
 
-      <div className="w-full lg:w-1/2 relative">
+      <div className="w-full  mx-auto lg:w-1/2 relative">
         <img
           src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fabout%2F1.jpg&w=640&q=75"
-          alt="Farmer"
-          className="rounded-lg shadow-md w-full h-auto"
+    
+          className="mx-auto mr-4 shadow-md w-150 h-180"
         />
       </div>
 
-
       <div className="w-full lg:w-1/2 relative">
-        <h1 className="text-4xl font-bold leading-tight">
+        <h1 className="text-4xl font-bold leading-tight text-black dark:text-white">
           Agriculture & Organic <br />
           Product Farm
         </h1>
 
-        <p className="mt-4 text-gray-600 max-w-lg">
+        <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-lg">
           There are many variations of passages of ipsum available but the
           majority have suffered alteration in some form by injected humor or
           random word which don’t look even. Comparison new ham melancholy.
         </p>
 
         <div className="flex items-end gap-3 mt-6">
-          <span className="text-8xl font-bold text-green-600">25M</span>
-          <p className="text-medium font-semibold text-gray-600 leading-tight">
+          <span className="text-8xl font-bold text-green-600 dark:text-green-400">25M</span>
+          <p className="text-medium font-semibold text-gray-600 dark:text-gray-300 leading-tight">
             Growth Tonns <br /> of Harvest
           </p>
         </div>
 
-
-        <div className="absolute -left-20 top-[350px] z-20">
+        <div className="lg:absolute -left-20 top-[350px] z-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* CARD 1 */}
-            <div className="bg-[#F6C764] p-8 rounded-lg shadow-xl h-[400px] w-64 flex flex-col">
-              <div className="text-4xl mb-4"><img className='h-30 w-30'
-                src='https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F3.png&w=256&q=75'
-              ></img></div>
-              <h3 className="font-bold text-xl leading-tight">
+
+            <div className="bg-[#F6C764] dark:bg-yellow-600 p-8 shadow-xl h-[300px] w-[300px] flex flex-col">
+              <div className="mb-4">
+                <img
+                  className="h-20 w-20"
+                  src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F3.png&w=256&q=75"
+                />
+              </div>
+              <h3 className="font-bold text-xl leading-tight text-black dark:text-white">
                 100% Guaranteed <br /> Organic Product
               </h3>
-              <p className="text-sm font-semibold text-gray-700 mt-3">
+              <p className="text-sm font-semibold text-gray-700 dark:text-gray-200 mt-3">
                 Always parties but trying she showing of moment.
               </p>
             </div>
 
-
-            <div className="bg-[#4DA66C] p-8 rounded-lg shadow-xl h-[400px] w-64 text-white flex flex-col">
-              <div className="text-4xl mb-4"><img className='h-30 w-30'
-                src='https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F2.png&w=256&q=75'
-              ></img></div>
+            
+            <div className="bg-[#4DA66C] dark:bg-green-700 p-8 shadow-xl h-[300px] w-[300px] text-white flex flex-col">
+              <div className="mb-4">
+                <img
+                  className="h-20 w-20"
+                  src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F2.png&w=256&q=75"
+                />
+              </div>
               <h3 className="font-bold text-xl leading-tight">
                 Top-Quality Healthy <br /> Foods Production
               </h3>
@@ -143,20 +219,18 @@ function WhatweDo() {
 
 
         <img
-          src="barn-removebg-preview.png"
-          alt="Barn"
+          src="https://agrica-nextjs.vercel.app/assets/img/shape/9.png"
           className="hidden lg:block absolute right-0 top-10 w-[450px] opacity-90 pointer-events-none"
         />
 
 
         <div className="text-center mb-14">
-          <h3 className="text-green-600 text-lg font-semibold font-serif">What We Do</h3>
-          <h1 className="text-4xl lg:text-5xl font-bold mt-2">
+          <h3 className={`${shadow.className} text-green-600 text-lg font-semibold font-serif`}>What We Do</h3>
+          <h1 className={` ${outfit.className} text-4xl lg:text-5xl font-bold mt-2`}>
             Currently we are <br /> selling organic food
           </h1>
         </div>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 relative z-10">
 
 
@@ -200,7 +274,7 @@ function WhatweDo() {
             </button>
           </div>
 
-          {/* CARD 3 */}
+     
           <div className="bg-white p-10 rounded-3xl shadow-md">
             <img
               src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F4.png&w=750&q=75"
@@ -231,7 +305,7 @@ function WhatweDo() {
 function YouTubeBackground() {
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      {/* YouTube Iframe */}
+     
       <iframe
         className="absolute top-0 left-0 w-full h-full pointer-events-none"
         src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1&controls=0&loop=1&playlist=YLIZIMYnZlw&modestbranding=1&showinfo=0"
@@ -242,9 +316,9 @@ function YouTubeBackground() {
 
 
 
-      <div className="relative top-16 flex items-center ml-15 h-150">
+      <div className="absolute bottom-0 left-0 top-16 flex items-center mt-full h-150">
         <div className="bg-[#3FAF55] text-white p-12  w-150 ">
-          <h2 className="text-5xl font-bold leading-tight mb-6">
+          <h2 className="text-5xl font-bold leading-tight  mb-6">
             Distributors of <br /> Organic Produce
           </h2>
 
@@ -306,22 +380,31 @@ function Fruits() {
   ];
 
   return (
-    <div className="flex">
+    <div className="flex ">
+
+<div className='flex-1'>
+   <div className="relative w-full h-[400px]  bg-[url('https://agrica-nextjs.vercel.app/assets/img/banner/17.jpg')] bg-cover bg-center">
+   <div className="absolute lg:block hidden inset-0 bg-white"></div>
+
+ <h1 className={`absolute inset-0 flex items-center justify-center 
+             text-8xl font-bold  ${shadow.className} mt-7
+             bg-[url('https://agrica-nextjs.vercel.app/assets/img/banner/17.jpg')] bg-cover bg-center 
+             bg-clip-text text-transparent`}>
+Healthy Life <br></br> With Fresh <br></br> Products
+  </h1>
+</div>
+</div>
+
+ 
+      <div className="lg:flex-1 bg-green-900 w-full overflow-hidden">
+        <h1 className={` lg:hidden block ${shadow.className} text-3xl text-yellow-400 text-center mt-20 w-full`}>
+          Healthy Life With Fresh <br></br> Products
+        </h1>
 
 
-      <img className="h-[600px] w-[600px] object-cover" src="hey.png" />
+       
 
-      {/* green fruit */}
-      <div className="flex-1 bg-green-900 relative overflow-hidden">
-
-
-        <img
-          src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2F11.png&w=384&q=75"
-          className="absolute bottom-0 right-0 w-56 opacity-70 z-0 pointer-events-none"
-        />
-
-
-        <div className="relative z-10 grid grid-cols-3 gap-12 mt-14 py-10 px-10">
+        <div className="relative z-10 grid grid-cols-3 gap-7 mt-14 py-10 px-10 ">
           {fruits.map((item, index) => (
             <div
               key={index}
@@ -334,8 +417,17 @@ function Fruits() {
               />
               <p className="text-white text-lg font-medium">{item.name}</p>
             </div>
+             
           ))}
+          <div>
+           <img
+          src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2F11.png&w=384&q=75"
+          className="absolute bottom-0 right-0 w-56 opacity-70 z-0 pointer-events-none"
+        />
+</div>
         </div>
+
+        
 
       </div>
     </div>
@@ -364,13 +456,13 @@ const projects = [
 
 function Gallery() {
   return (
-    <section className="w-full py-16 px-6 md:px-12">
+    <section className="w-full py-16 px-6 dark:bg-gray-800 md:px-12">
       <div className="text-center mb-12">
-        <p className={`${pacifico.className} text-5xl  leading-tight text-green-600 font-semibold`}> Awesome Gallery</p>
-        <h2 className="text-3xl md:text-4xl font-bold">Explore Projects</h2>
+        <p className={`${shadow.className} text-3xl  leading-tight text-green-600 font-semibold`}> Awesome Gallery</p><br></br>
+        <h2 className={` ${outfit.className} text-3xl md:text-4xl font-bold dark:text-white`}>Explore Projects</h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
         {projects.map((item, index) => (
           <div
             key={index}
@@ -379,14 +471,14 @@ function Gallery() {
             <img
               src={item.image}
               alt={item.title}
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className={` ${outfit.className} object-cover transition-transform duration-500 group-hover:scale-105`}
             />
 
             <div className="absolute bottom-5 left-5 text-left">
-              <p className="text-yellow-300 text-sm uppercase font-semibold drop-shadow-lg">
+              <p className={` ${outfit.className} text-yellow-300 text-sm uppercase font-semibold drop-shadow-lg`}>
                 {item.category}
               </p>
-              <h3 className="text-white font-bold drop-shadow-lg">
+              <h3 className={ `${shadow.className} text-white text-3xl font-bold drop-shadow-lg`}>
                 {item.title}
               </h3>
             </div>
@@ -395,17 +487,18 @@ function Gallery() {
 
       </div>
     </section>
+    
   );
 }
 
 function Organic() {
   return (
-    <section className="w-full py-16 bg-white ml-30">
+    <section className="w-full py-16 flex flex-col bg-white  lg:block dark:bg-gray-800 dark:text-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 items-center px-6">
 
 
-        <div className="relative flex justify-center">
-          <div className="absolute -bottom-6 -left-6 w-64 h-64 border-4 border-yellow-500"></div>
+        <div className="relative  flex justify-center">
+          <div className="absolute  -bottom-6 -left-6 w-64 h-64 border-4 lg:block hidden border-yellow-500 "></div>
           <img
             src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F9.png&w=1200&q=75"
             className="relative z-10 w-full max-w-sm"
@@ -413,19 +506,19 @@ function Organic() {
         </div>
 
 
-        <div className="space-y-10">
+        <div className="space-y-10 lg:block flex flex-col">
           <div>
-            <h2 className="text-2xl font-bold">Pure & Organic</h2>
-            <p className="text-gray-600 mt-2">
+            <h2 className="text-2xl font-bold ">Pure & Organic</h2>
+            <p className="text-gray-600 mt-2 dark:text-white">
               Continued at up to zealously necessary breakfast. Surrounded sir
               motionless she end literature. Gay direction neglected but
               supported yet her.
             </p>
           </div>
 
-          <div>
+          <div className='lg:block flex flex-col'>
             <h2 className="text-2xl font-bold">Always Fresh</h2>
-            <p className="text-gray-600 mt-2">
+            <p className="text-gray-600 dark:text-white mt-2">
               Continued at up to zealously necessary breakfast. Surrounded sir
               motionless she end literature. Gay direction neglected but
               supported yet her.
@@ -504,119 +597,79 @@ function Organic() {
   );
 }
 function Contact() {
-  return (
-    <section className="w-full bg-[#e7f0eb] py-32 relative">
-      <div className="max-w-7xl mx-auto relative">
-
-
-        <div className="grid grid-cols-1 lg:grid-cols-3">
-
-
-          <div className="flex justify-center items-end relative">
-            <img
-              src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F10.png&w=750&q=75"
-
-              className="w-64 lg:w-80 relative z-30 :-mr-0.5"
-            />
-          </div>
-
-          <div></div>
-
-          <div className="bg-[#0f4a3a] text-white p-12 lg:p-20 relative z-10">
-            <h2 className="text-3xl font-bold">
-              Contact<span className="underline decoration-yellow-400">Information</span>
-            </h2>
-
-            <p className="text-sm text-gray-300 mt-3 leading-relaxed max-w-sm">
-              Plan upon yet way get cold spot its week. Almost do am or limits hearts.
-              Resolve parties but why she shewing.
-            </p>
-
-            <div className="mt-10 space-y-8 text-sm">
-              <div>
-                <p className="font-bold">Hotline</p>
-                <p className="text-gray-300 mt-1">+4733378901</p>
-              </div>
-
-              <div>
-                <p className="font-bold">Our Location</p>
-                <p className="text-gray-300 mt-1 leading-snug">
-                  55 Main Street, The Grand Avenue 2nd Block,<br />
-                  New York City
-                </p>
-              </div>
-
-              <div>
-                <p className="font-bold">Official Email</p>
-                <p className="text-gray-300 mt-1">info@agrul.com</p>
-              </div>
-            </div>
-          </div>
+    return (
+        <div className="dark:bg-black bg-green-50 py-26 flex flex-col lg:flex-row">
+            <img className="-ml-24 h-120 z-1000 self-end -mb-20 hidden lg:block" src="/man.png"></img>
+            <Message />
+            <Contact4 />
         </div>
+    )
+}
 
-
-        <div className="absolute top-1/2 left-[40%] transform -translate-y-1/2 -translate-x-1/2 
-        bg-white shadow-xl rounded-lg p-10 w-[90%] lg:w-[45%] z-20">
-
-          <p className="text-green-700 font-semibold text-lg">Have Questions?</p>
-          <h2 className="text-3xl font-bold mt-2">Send us a message</h2>
-
-          <div className="mt-6 space-y-4">
-            <input
-              type="text"
-              placeholder="Name"
-              className="w-full p-3 bg-gray-100 rounded-md outline-none"
-            />
-
-            <div className="flex gap-3">
-              <input
-                type="email"
-                placeholder="Email*"
-                className="w-1/2 p-3 bg-gray-100 rounded-md outline-none"
-              />
-              <input
-                type="text"
-                placeholder="Phone"
-                className="w-1/2 p-3 bg-gray-100 rounded-md outline-none"
-              />
+function Message() {
+    return (
+        <div className="bg-white mx-auto dark:bg-gray-800 lg:-ml-20 lg:py-20 lg:px-26 px-6 py-12 lg:flex-[50%] flex flex-col items-center gap-2">
+            <h3 className={`text-green-700 dark:text-[#f7c35f] self-start ${shadow.className} text-2xl`}>Have Questions?</h3>
+            <h2 className={`font-semibold dark:text-white self-start ${outfit.className} mb-6 text-5xl`}>Send us a message</h2>
+            <div className="w-full flex flex-col gap-4 mt-2">
+                <input className="bg-gray-100 focus:outline-2 w-full focus:outline-blue-200  py-2 px-4 rounded-lg" type="text" placeholder="Name"></input>
+                <div className="flex flex-col lg:flex-row w-full gap-4">
+                    <input className="bg-gray-100 flex-1 font-medium focus:outline-2  focus:outline-blue-200 py-2 px-4 rounded-lg" type="text" placeholder="Email"></input>
+                    <input className="bg-gray-100  flex-1 focus:outline-2  focus:outline-blue-200 py-2 px-4 rounded-lg" type="text" placeholder="Phone"></input>
+                </div>
+                <textarea className="bg-gray-100 focus:outline-2 h-40 w-full focus:outline-blue-200 py-2 px-4 rounded-lg" placeholder="Tell Us About Project"></textarea>
             </div>
-
-            <textarea
-              rows="4"
-              placeholder="Tell Us About Project *"
-              className="w-full p-3 bg-gray-100 rounded-md outline-none"
-            />
-
-            <button className="bg-yellow-500 text-black font-semibold px-6 py-3 rounded-md flex items-center gap-2 hover:bg-yellow-400 transition">
-              Get In Touch
+            <button className="bg-[#f7c35f] cursor-pointer mt-2 hover:bg-[#49a760] hover:text-white self-start rounded-lg px-8 py-2 text-lg font-bold ">
+                <svg className="w-6 h-6 inline -mt-1 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                    <path d={"M46.137,6.552c-0.75-0.636-1.928-0.727-3.146-0.238l-0.002,0C41.708,6.828,6.728,21.832,5.304,22.445	c-0.259,0.09-2.521,0.934-2.288,2.814c0.208,1.695,2.026,2.397,2.248,2.478l8.893,3.045c0.59,1.964,2.765,9.21,3.246,10.758	c0.3,0.965,0.789,2.233,1.646,2.494c0.752,0.29,1.5,0.025,1.984-0.355l5.437-5.043l8.777,6.845l0.209,0.125	c0.596,0.264,1.167,0.396,1.712,0.396c0.421,0,0.825-0.079,1.211-0.237c1.315-0.54,1.841-1.793,1.896-1.935l6.556-34.077	C47.231,7.933,46.675,7.007,46.137,6.552z M22,32l-3,8l-3-10l23-17L22,32z"}></path>
+                </svg>
+                Get in Touch
             </button>
-          </div>
-
         </div>
+    )
+}
 
-      </div>
-    </section>
-  );
+function Contact4() {
+    return (
+        <div className="dark:bg-black bg-green-900 text-white dark:text-white lg:flex-[50%] flex flex-col gap-6 lg:py-20 lg:px-12 py-4 px-6">
+            <h2 className={`font-semibold relative self-start ${outfit.className} mt-4 mb-4 text-5xl`}>
+                Contact&nbsp; Information
+            </h2>
+            <p className={`text-white dark:text-white text-md ${outfit.className}`}>Plan upon yet way get cold spot its week. Almost do<br /> am or limits hearts. Resolve parties but why she<br /> shewing.</p>
+            <div>
+                <h2 className="text-lg font-semibold">Hotline</h2>
+                <p>+4733378901</p>
+            </div>
+            <div>
+                <h2 className="text-lg font-semibold">Our Location</h2>
+                <p className={`text-gray-white dark:text-white text-md ${outfit.className}`}>55 Main Street, The Grand Avenue 2nd Block,<br />New York City</p>
+            </div>
+            <div>
+                <h2 className="text-lg font-semibold">Office Email</h2>
+                <p>info@agrul.com</p>
+            </div>
+        </div>
+    )
 }
 function Blog() {
   const router = useRouter();
   const goToBlog = () => router.push("/blog");
 
   return (
-    <section className=" ml-30 py-20 bg-white">
+    <section className="px-30 py-20 dark:bg-black bg-white">
 
       <div className="text-center mb-14">
         <p className="text-green-700 font-semibold text-lg">Latest News</p>
-        <h2 className="text-3xl md:text-4xl font-bold mt-2">
+        <h2 className="text-3xl md:text-4xl font-bold mt-2 dark:text-white">
           Check out our blog posts
         </h2>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
 
 
         <div
-          className="relative h-[400px]   rounded-xl overflow-hidden shadow-lg cursor-pointer"
+          className="relative h-[400px]  rounded-xl overflow-hidden shadow-lg cursor-pointer"
           onClick={goToBlog}
         >
           <img
@@ -718,3 +771,60 @@ function Blog() {
     </section>
   );
 }
+function CircleTag(){
+  return (
+    
+    <div className="relative w-40 h-40  hidden lg:flex  items-center justify-center">
+      
+      <div className="absolute inset-0 rounded-full bg-black/40 backdrop-blur-sm"></div>
+
+   
+      <svg
+        viewBox="0 0 300 300"
+        className="absolute w-full h-full"
+      >
+        <defs>
+          <path
+            id="circlePath"
+            d="M 150,150
+               m -120,0
+               a 120,120 0 1,1 240,0
+               a 120,120 0 1,1 -240,0"
+          />
+        </defs>
+
+        <text
+          className={`${shadow.className}`}
+          fill="white"
+          fontSize="28"
+          fontWeight="600"
+          letterSpacing="12"
+        >
+          <textPath
+            href="#circlePath"
+            startOffset="50%"
+            textAnchor="middle"
+
+          >
+            100% ORGANIC PRODUCT
+          </textPath>
+        </text>
+      </svg>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-10 h-10 text-white z-10"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="2"
+        stroke="white"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M7 17l10-10m0 0H9m8 0v8"
+        />
+      </svg>
+    </div>
+  );
+};
