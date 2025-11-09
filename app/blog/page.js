@@ -101,7 +101,6 @@ export default function ContactPage() {
     const currentBlogs = blogs.slice(start, end)
     return (
         <div className="w-full">
-        <Header />
             <PhotoHead pageName={"Blog"} imageUrl={"/contact.jpg"} pageHead={"Explore Blogs"} />
             <div className="flex flex-col items-center gap-6 py-26 bg-[#e9f1ee] dark:bg-black">
                 {
