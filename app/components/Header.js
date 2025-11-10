@@ -22,40 +22,64 @@ export function Header() {
   return (
     // <div className="bg-white w-full">
     <>
-      <div className="bg-green-800 hidden text-white sm:flex flex-row items-center gap-2 p-2 h-10">
-        <img
-          className="h-5 w-5 ml-9"
-          src="https://icones.pro/wp-content/uploads/2021/03/symbole-de-l-horloge-jaune-300x300.png"
-        />
+      <div className={`${outfit.className} bg-[#1f4e3d] py-2 hidden text-white sm:flex flex-row justify-between items-center gap-2 lg:px-20`}>
+        <div className="flex flex-row items-center gap-4 lg:mx-0 mx-auto">
+          <div className="flex flex-row items-center gap-2">
+            <img
+              className="h-5 w-5 inline"
+              src="https://icones.pro/wp-content/uploads/2021/03/symbole-de-l-horloge-jaune-300x300.png"
+            />
 
-        <p className="text-sm">
-          Opening Hours : Sunday–Friday, 08:00 am – 05:00 pm
-        </p>
+            <p className="">
+              Opening Hours : Sunday–Friday, 08:00 am – 05:00 pm
+            </p>
 
-        <img
-          className="h-5 w-5 ml-9"
-          src="https://www.pinclipart.com/picdir/big/162-1625836_icon-telephone-yellow-png-clipart.png"
-        />
+          </div>
+          <div className="border-r h-5 hidden md:block lg:hidden border-r-white"></div>
 
-        <p className="text-sm">+4733378901</p>
+          <div className="flex flex-row items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#d4af37"  // gold color
+              strokeWidth="2.3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-7 h-7 bg-[#204e3a] p-1 rounded"
+            >
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.1 5.18 2 2 0 0 1 5.11 3h3a2 2 0 0 1 2 1.72c.12.81.37 1.6.72 2.34a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.37 6.37l1.27-1.27a2 2 0 0 1 2.11-.45c.74.35 1.53.6 2.34.72a2 2 0 0 1 1.73 2z" />
+            </svg>
 
-        <div className="flex ml-auto gap-2 pr-8">
-          <img src="facebook-app-symbol.png" className="h-6 w-6" />
-          <img src="linkedin.png" className="h-6 w-6" />
+
+            <p className="">+4733378901</p>
+
+          </div>
+        </div>
+        <div className="lg:flex hidden gap-6">
+          <img src="facebook (2).png" className="h-6 w-6" />
+          <img src="twitter.png" className="h-6 w-6" />
           <img src="youtube.png" className="h-6 w-6" />
+          <img src="linkdin.png" className="h-6 w-6" />
         </div>
       </div>
 
 
-      <header className="w-full sticky top-0 bg-white z-50 shadow-md">
-        <div className="flex relative flex-row px-12 items-center justify-between py-4">
-            <MobileDropDown isClicked={isClicked} setIsClicked={setIsClicked} />
+      <header className="w-full sticky top-0 dark:bg-black dark:text-white bg-white z-50 shadow-md">
+        <div className="flex relative flex-row md:px-20 sm:px-14 px-4 items-center justify-between py-4">
+          <MobileDropDown isClicked={isClicked} setIsClicked={setIsClicked} />
 
           <img
             src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Flogo.png&w=828&q=75"
             alt="Logo"
-            className="h-12 w-auto"
+            className="h-16 w-auto dark:hidden"
           />
+          <img
+            src="logo-black.png"
+            alt="Logo"
+            className="h-16 w-auto hidden dark:block"
+          />
+
           <div className="hidden lg:flex flex-row gap-6">
             <DropDown itemHead={"Home"} itemList={["Home Agriculture", "Home Farming", "Agriculture Shop", "Diary Farm"]} />
             <DropDown itemHead={"Pages"} itemList={["About Us", "Team", "Team Details", "Contact Us", "Register", "Login", "Error Page"]} />
@@ -73,11 +97,11 @@ export function Header() {
               🛒
             </div>
 
-            <button className="border-2 lg:block hidden border-yellow-600 px-4 py-2 rounded-full hover:bg-yellow-600 hover:text-white">
+            <button className={`${outfit.className} cursor-pointer font-semibold border-2 lg:block hidden border-yellow-600 px-10 py-3 rounded-full hover:bg-yellow-600 hover:text-white`}>
               Register
             </button>
           </div>
-          <img className="absolute md:mt-16 mt-20 inset-0 z-0" src="/header.png"></img>
+          <img className="absolute dark:hidden md:mt-20 mt-20 inset-0 z-0" src="/header.png"></img>
 
         </div>
       </header>
@@ -110,11 +134,22 @@ function DropDown({ itemHead, itemList }) {
           router.push("/")
       }} className="flex gap-2 flex-row items-center">
         <p className="font-semibold">{itemHead}</p>
-        <img className="h-4 w-4" src="/dropdown-head.svg"></img>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-4 w-4"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M6 9l6 6 6-6" />
+        </svg>
       </div>
       {
         isOpen && (
-          <div className="absolute z-100 top-6 -left-4 bg-white w-70 p-6 shadow-2xl gap-2 flex flex-col">
+          <div className="absolute z-100 top-6 -left-4 bg-white dark:bg-black w-70 p-6 shadow-2xl gap-2 flex flex-col">
             {
               itemList.map((item, index) => (
                 <p onClick={() => {
@@ -137,7 +172,6 @@ function MobileDropDown({ isClicked, setIsClicked }) {
 
   useEffect(() => {
     function handleClickOutside(event) {
-      // if clicked outside the menu and hamburger icon, close it
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setIsClicked(false);
       }
@@ -149,7 +183,6 @@ function MobileDropDown({ isClicked, setIsClicked }) {
       document.removeEventListener("mousedown", handleClickOutside);
     }
 
-    // cleanup on unmount
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isClicked, setIsClicked]);
 
@@ -159,20 +192,31 @@ function MobileDropDown({ isClicked, setIsClicked }) {
         onClick={() => {
           setIsClicked(true)
         }}
+        fill="currentColor"
         className="dark:text-white h-7 w-7 cursor-pointer"
         xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30">
         <path d={"M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"}></path>
       </svg>
       {
         isClicked && (
-          <div className="p-6 flex flex-col fixed h-full overflow-y-scroll sm:w-[45%] top-0 left-0 w-[80%] z-100 bg-white">
+          <div className="p-6 flex flex-col fixed h-full overflow-y-scroll sm:w-[45%] top-0 left-0 w-[80%] z-100 dark:bg-black bg-white">
             <div className="flex flex-row items-center mb-6 justify-between">
               <img
                 src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Flogo.png&w=828&q=75"
                 alt="Logo"
-                className="sm:h-16 h-12 w-auto"
+                className="sm:h-16 h-12 w-auto dark:hidden"
               />
-              <div className="h-8 flex items-center flex-col justify-center w-8 border-2 rounded-full border-gray-200">
+              <img
+                src="logo-black.png"
+                alt="Logo"
+                className="sm:h-16 h-12 w-auto dark:block hidden"
+              />
+
+              <div
+                onClick={() => {
+                  setIsClicked(false)
+                }}
+                className="cursor-pointer h-8 flex items-center flex-col justify-center w-8 border-2 rounded-full border-gray-200">
                 <p className="text-xs font-bold">✕</p>
               </div>
             </div>
