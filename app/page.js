@@ -1,6 +1,6 @@
 'use client';
 import { useState,useEffect } from 'react';
-import { Footer } from './/components/Footer.js';
+
 
 
 import "./globals.css";
@@ -36,13 +36,15 @@ export default function Home() {
       <AgricultureSection /><br></br>
       <WhatweDo />
       <Fruits />
+     <Testimonials/>
       <br />
+
       <Gallery />
       <Organic />
 
       <Contact />
       <Blog />
-      <Footer />
+      
     </div>
   );
 }
@@ -50,12 +52,12 @@ export default function Home() {
 
 function HeroPage() {
   const images = [
-   {
-    "url": "https://agrica-nextjs.vercel.app/assets/img/banner/4.jpg",
-    "heading": "Homemade Organic Products"},
-   {"url":"https://agrica-nextjs.vercel.app/assets/img/banner/3.jpg",
-    "heading":"Agriculture Farming Products"
-   }
+   
+     "https://agrica-nextjs.vercel.app/assets/img/banner/4.jpg",
+  
+   "https://agrica-nextjs.vercel.app/assets/img/banner/3.jpg",
+    
+   
    ];
 
   const [index, setIndex] = useState(0);
@@ -396,7 +398,7 @@ Healthy Life <br></br> With Fresh <br></br> Products
 </div>
 
  
-      <div className="lg:flex-1 bg-green-900 w-full overflow-hidden">
+      <div className="lg:flex-1 bg-[#1f4e3d] w-full overflow-hidden">
         <h1 className={` lg:hidden block ${shadow.className} text-3xl text-yellow-400 text-center mt-20 w-full`}>
           Healthy Life With Fresh <br></br> Products
         </h1>
@@ -828,3 +830,100 @@ function CircleTag(){
     </div>
   );
 };
+
+function Testimonials() {
+  const testimonials = [
+    {
+      image:
+        "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffarmers%2F3.jpg&w=828&q=75",
+      text:
+        "Targeting consultation discover apartments. Indulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week.",
+      name: "Matthew J. Wyman",
+      role: "SENIOR CONSULTANT",
+      rating: 5,
+    },
+    {
+      image:
+        "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffarmers%2F2.jpg&w=828&q=75",
+      text:
+        "Consultation discover apartments. Indulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits.",
+      name: "Anthom Bu Spar",
+      role: "MARKETING MANAGER",
+      rating: 4,
+    },
+    {
+      image:
+        "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffarmers%2F1.jpg&w=828&q=75",
+      text:
+        "Business discover apartments. Indulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts.",
+      name: "Metho K. Partho",
+      role: "SENIOR DEVELOPER",
+      rating: 5,
+    },
+  ];
+
+  const [index, setIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % testimonials.length);
+        setFade(true);
+      }, 400);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const t = testimonials[index];
+
+  return (
+    <section className={`w-full bg-[#e8f1eb]  pt-20 px-4 ${outfit.className}`}>
+
+      <div className="relative flex justify-center mb-16">
+    <img
+          src="https://agrica-nextjs.vercel.app/assets/img/shape/5.png"
+        />
+        <h2 className="absolute -top-8 text-4xl font-bold">
+          Testimonials
+        </h2>
+      </div>
+      <div className="max-w-5xl mx-auto flex items-center">
+
+        <div
+          className={`bg-white shadow-lg p-10 pl-60 w-full transition-opacity  relative duration-500 ${ fade ? "opacity-100" : "opacity-0"}`}
+        >
+        <div className='flex-1 absolute -top-20 -left-20 '>
+        <img
+          src={t.image}
+          className="w-70 h-70 object-cover "
+        />
+        </div>
+          <img
+            src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2Fquote-big.png&w=640&q=75"className="w-12 mb-4" />
+
+          <p className="text-gray-500 text-4xl leading-relaxed mb-6">
+            “{t.text}”  </p>
+
+          <div className="border-t-2 border-gray-700 my-4"></div>
+<h4 className="font-bold text-lg">{t.name}</h4>
+          <p className="text-green-600 text-sm mb-2">{t.role}</p>
+           <div className="text-yellow-400 text-xl">
+            {"★".repeat(t.rating)}
+            {"☆".repeat(5 - t.rating)}
+          </div>
+        </div>
+      </div>
+
+      <div className="flex mt-10">
+        <img src="https://agrica-nextjs.vercel.app/assets/img/shape/13.png" />
+        <img src="https://agrica-nextjs.vercel.app/assets/img/shape/13.png" />
+        <img src="https://agrica-nextjs.vercel.app/assets/img/shape/13.png" />
+        <img src="https://agrica-nextjs.vercel.app/assets/img/shape/13.png" />
+        <img src="https://agrica-nextjs.vercel.app/assets/img/shape/13.png" />
+        <img src="https://agrica-nextjs.vercel.app/assets/img/shape/13.png" />
+      </div>
+    </section>
+  );
+}
