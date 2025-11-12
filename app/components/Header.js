@@ -19,6 +19,7 @@ const outfit = Outfit({
 
 
 export function Header() {
+  const router = useRouter()
   const { cart } = useAuth();
   const [isClicked, setIsClicked] = useState(false)
   const [isCart, setIsCart] = useState(false)
@@ -106,8 +107,12 @@ export function Header() {
             <DropDown itemHead={"Shop"} itemList={["Shop Product", "Shop Single", "Shop Single Version Two", "Cart", "Checkout"]} />
           </div>
 
-          <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="flex items-center gap-4">
-            <div className="relative bg-blue-100 p-3 rounded-full cursor-pointer">
+          <div className="flex items-center gap-4">
+            <div
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className="relative bg-blue-100 p-3 rounded-full cursor-pointer"
+            >
               <span className="absolute -top-2 -right-2 bg-yellow-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
                 {cart.length}
               </span>
@@ -145,7 +150,9 @@ export function Header() {
 
             </div>
 
-            <button className={`${outfit.className} cursor-pointer font-semibold border-2 lg:block hidden border-yellow-600 px-10 py-3 rounded-full hover:bg-yellow-600 hover:text-white`}>
+            <button onClick={() => {
+              router.push("/register")
+            }} className={`${outfit.className} cursor-pointer font-semibold border-2 lg:block hidden border-yellow-600 px-10 py-3 rounded-full hover:bg-yellow-600 hover:text-white`}>
               Register
             </button>
           </div>
