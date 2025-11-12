@@ -1,8 +1,8 @@
 "use client"
-import {Header} from "../components/Header.js"
 import PhotoHead from "../components/PhotoHead"
 import { Outfit } from "next/font/google"
 import { useState } from "react"
+import { useAuth } from "../contexts/AuthContext"
 
 const outfit = Outfit({
     subsets: ["latin"],
@@ -132,7 +132,7 @@ const items = [
     }
 ]
 
-export default function ContactPage() {
+export default function ProductPage() {
     const [drop, setDrop] = useState(false)
     const [currentPage, setCurrentPage] = useState(1);
     const [grid, setGrid] = useState(true)
@@ -235,6 +235,8 @@ function Pages({ no, currentPage, setCurrentPage }) {
 
 
 function ProductCard({ imgUrl, type, name, price, grid, setGrid }) {
+        const { cart, setCart } = useAuth();
+
     return (
         <div className={`rounded-lg bg-white dark:bg-gray-800 dark:text-white py-8 flex items-center
             ${grid
@@ -278,7 +280,10 @@ function ProductCard({ imgUrl, type, name, price, grid, setGrid }) {
                             d={"M9 7a3 3 0 0 1 6 0"}
                         />
                     </svg>
-                    <p className="text-sm font-semibold">ADD TO CART</p>
+                    <p onClick={() => {
+                        setCart(prev => [...prev, { prodName: name, price: price, img: imgUrl }])
+                        console.log(cart)
+                    }} className="text-sm font-semibold">ADD TO CART</p>
                 </button>
             </div>
         </div>
@@ -351,7 +356,7 @@ function Head({ drop, setDrop, grid, setGrid }) {
                     </div>
                     {
                         drop &&
-                        <div className="absolute bg-white dark:bg-black items-center left-0 flex flex-col border border-black w-39 py-3">
+                        <div className="absolute bg-white dark:bg-black items-center left-0 flex flex-col border border-black w-41 py-3">
                             <div className="hover:bg-gray-300 w-full text-center cursor-pointer">Sort by Popular</div>
                             <div className="hover:bg-gray-300 w-full text-center cursor-pointer">Sort by Latest</div>
                             <div className="hover:bg-gray-300 w-full text-center cursor-pointer">Sort by Relevance</div>

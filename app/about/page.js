@@ -6,8 +6,8 @@ import { Shadows_Into_Light_Two } from 'next/font/google';
 import { useRouter } from "next/navigation";
 
 const outfit = Outfit({
-    subsets: ["latin"],
-    weight: ["100", "200", "300", "400", "600", "700", "800", "900"]
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "600", "700", "800", "900"]
 });
 
 const shadow = Shadows_Into_Light_Two({
@@ -36,7 +36,7 @@ function AgricultureSection() {
   return (
     <section className="w-full px-10 py-16 mx-auto flex flex-col lg:flex-row gap-12 items-start relative bg-white dark:bg-gray-800">
 
-     
+
       <img
         src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F1.png&w=256&q=75"
     
@@ -46,7 +46,7 @@ function AgricultureSection() {
       <div className="w-full  mx-auto lg:w-1/2 relative">
         <img
           src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fabout%2F1.jpg&w=640&q=75"
-    
+
           className="mx-auto mr-4 shadow-md w-150 h-180"
         />
       </div>
@@ -88,7 +88,7 @@ function AgricultureSection() {
               </p>
             </div>
 
-            
+
             <div className="bg-[#4DA66C] dark:bg-green-700 p-8 shadow-xl h-[300px] w-[300px] text-white flex flex-col">
               <div className="mb-4">
                 <img
@@ -113,7 +113,7 @@ function AgricultureSection() {
 }
 
 
- function Timeline() {
+function Timeline() {
   const items = [
     { year: "1906", title: "Open Farm" },
     { year: "1920", title: "Farm Remodelacion" },
@@ -127,7 +127,7 @@ function AgricultureSection() {
       style={{ backgroundImage: "url('https://agrica-nextjs.vercel.app/assets/img/shape/21.png')" }}
     >
       <div className="max-w-6xl mx-auto">
-        
+
         <div className="mb-14">
           <h2 className={` ${outfit.className} text-4xl md:text-5xl font-bold mb-4`}>
             Farming have been <br /> since 1866
@@ -155,7 +155,25 @@ function AgricultureSection() {
               </p>
             </div>
           ))}
-        </div>
+        </div> 
+        
+        {/* This looks pretty nice */}
+        {/* <div className="hidden lg:flex justify-around w-full h-[3px] bg-[#1f4e3d] relative mb-50">
+          {items.map((item, i) => (
+            <div className="" key={i}>
+              <div className="w-5 absolute -top-2 h-5 flex flex-col justify-center items-center bg-white border-2 border-[#1f4e3d] rounded-full">
+                <div className="w-2 h-2 bg-[#1f4e3d] rounded-full"></div>
+              </div>
+              <div className="w-[3px] h-10 ml-2 bg-[#1f4e3d] mb-5"></div>
+              <h1 className="-ml-5 text-4xl font-bold text-[#1f4e3d] dark:text-teal-300 mb-2">
+                {item.year}
+              </h1>
+              <p className="-ml-5 text-lg font-semibold text-gray-900 dark:text-white">
+                {item.title}
+              </p>
+            </div>
+          ))}
+        </div> */}
 <div className="lg:hidden flex flex-col justify-around h-full w-[3px] bg-[#1f4e3d] relative mb-50">
           {items.map((item, i) => (
             <div className="flex flex-row gap-20" key={i}>

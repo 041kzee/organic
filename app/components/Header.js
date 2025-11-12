@@ -2,6 +2,7 @@
 import { Outfit } from "next/font/google"
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation"
+import { useAuth } from "../contexts/AuthContext";
 
 const validRoutes = {
   "Home": "/",
@@ -16,8 +17,24 @@ const outfit = Outfit({
   weight: ["100", "200", "300", "400", "600", "700", "800", "900"]
 })
 
+
 export function Header() {
+  const { cart } = useAuth();
   const [isClicked, setIsClicked] = useState(false)
+  const [isCart, setIsCart] = useState(false)
+  let cartTotal = 0
+  cart.forEach((item) => {
+    cartTotal += parseFloat(item.price.replace('$', ''))
+  })
+
+
+  const handleMouseEnter = () => {
+    setIsCart(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsCart(false)
+  }
 
   return (
     // <div className="bg-white w-full">
@@ -89,12 +106,43 @@ export function Header() {
             <DropDown itemHead={"Shop"} itemList={["Shop Product", "Shop Single", "Shop Single Version Two", "Cart", "Checkout"]} />
           </div>
 
-          <div className="flex items-center gap-4">
+          <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="flex items-center gap-4">
             <div className="relative bg-blue-100 p-3 rounded-full cursor-pointer">
               <span className="absolute -top-2 -right-2 bg-yellow-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                0
+                {cart.length}
               </span>
               🛒
+              {
+                isCart && (
+                  <div className={`${outfit.className} absolute w-74 right-0 top-15 bg-white dark:bg-black p-6 dark:text-white`}>
+                    {
+                      cart.map((item, index) => (
+                        <div className="flex border-b border-b-gray-300 flex-row gap-4 items-center py-3" key={index}>
+                          <img className="w-16 h-16" src={item.img}></img>
+                          <div>
+                            <h1 className="text-md font-semibold mb-2">{item.prodName}</h1>
+                            <div className="flex flex-row gap-3 items-center">
+                              <p className="text-gray-500 font-semibold">1x</p>
+                              <p className="text-[#49a760] font-semibold text-lg">{item.price}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))
+                    }
+                    <div className="py-4 flex flex-row items-center justify-between">
+                      <p className="font-semibold">Total</p>
+                      <p>: ${cartTotal}.00</p>
+                    </div>
+                    <button className="text-white text-md font-semibold w-full py-2 mb-2 rounded-md bg-[#1f4e3d]">
+                      CART
+                    </button>
+                    <button className="text-black text-md font-semibold w-full py-2 rounded-md bg-[#f7c35f]">
+                      CHECKOUT
+                    </button>
+                  </div>
+                )
+              }
+
             </div>
 
             <button className={`${outfit.className} cursor-pointer font-semibold border-2 lg:block hidden border-yellow-600 px-10 py-3 rounded-full hover:bg-yellow-600 hover:text-white`}>

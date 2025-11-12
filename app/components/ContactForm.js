@@ -13,7 +13,7 @@ const outfit = Outfit({
 export default function ContactForm() {
     return (
         <div className="dark:bg-black bg-gray-200 py-26 flex flex-col lg:flex-row">
-            <img className="-ml-24 h-120 z-1000 self-end -mb-20 hidden lg:block" src="/man.png"></img>
+            <img className="-ml-24 h-120 z-40 self-end -mb-20 hidden lg:block" src="/man.png"></img>
             <Message />
             <Contact />
         </div>
@@ -46,9 +46,12 @@ function Message() {
 function Contact() {
     return (
         <div className="dark:text-white lg:flex-[50%] flex flex-col gap-6 lg:py-20 lg:px-12 py-4 px-6">
-            <h2 className={`font-semibold relative self-start ${outfit.className} mt-4 mb-4 text-5xl`}>
+        <div className="relative">
+            <h2 className={`font-semibold z-20 relative self-start ${outfit.className} mt-4 mb-4 text-5xl`}>
                 Contact&nbsp; Information
             </h2>
+            <img className="absolute left-50 w-50 top-12" src="info-underline.png"></img>
+        </div>
             <p className={`text-gray-500 dark:text-white text-md ${outfit.className}`}>Plan upon yet way get cold spot its week. Almost do<br /> am or limits hearts. Resolve parties but why she<br /> shewing.</p>
             <div>
                 <h2 className="text-lg font-semibold">Hotline</h2>

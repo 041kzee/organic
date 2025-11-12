@@ -9,7 +9,7 @@ export default function PhotoHead({ pageName, imageUrl, pageHead }) {
             <div className="relative">
                 <img
                     src={imageUrl}
-                    className="max-h-90 saturate-180 w-full "
+                    className="max-h-115 saturate-180 w-full "
                 >
                 </img>
                 <div className="absolute inset-0 bg-gray-800/50"></div>
