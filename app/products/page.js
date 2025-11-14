@@ -14,121 +14,121 @@ const items = [
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F1.png&w=640&q=75",
         "type": "Crop, Organic",
         "name": "Strawberry",
-        "price": "$12.00"
+        "price": 12
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F2.png&w=640&q=75",
         "type": "Vegetables, Winter",
         "name": "Organic Carrot",
-        "price": "$5.00"
+        "price": 5
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F3.png&w=640&q=75",
         "type": "Fruits, Juicy",
         "name": "Fresh Red Seedless",
-        "price": "$14.00"
+        "price": 14
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F4.png&w=640&q=75",
         "type": "Fruits, Juicy",
         "name": "Organic Sweet Corn",
-        "price": "$8.00"
+        "price": 8
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F5.png&w=640&q=75",
         "type": "Fish, Health",
         "name": "Fresh Fish",
-        "price": "$25.00"
+        "price": 25
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F6.png&w=640&q=75",
         "type": "Seasonal, Fruit",
         "name": "Fresh Banana",
-        "price": "$13.00"
+        "price": 13
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F7.png&w=640&q=75",
         "type": "Seasonal, Vegetables",
         "name": "Organic Cucumber",
-        "price": "$3.00"
+        "price": 3
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F8.png&w=640&q=75",
         "type": "Vegetables, Fruit",
         "name": "Green Avocado",
-        "price": "$6.00"
+        "price": 6
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F4.png&w=640&q=75",
         "type": "Fruits, Juicy",
         "name": "Organic Sweet Corn",
-        "price": "$8.00"
+        "price": 8
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F1.png&w=640&q=75",
         "type": "Crop, Organic",
         "name": "Strawberry",
-        "price": "$12.00"
+        "price": 12
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F7.png&w=640&q=75",
         "type": "Seasonal, Vegetables",
         "name": "Organic Cucumber",
-        "price": "$3.00"
+        "price": 3
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F3.png&w=640&q=75",
         "type": "Fruits, Juicy",
         "name": "Fresh Red Seedless",
-        "price": "$14.00"
+        "price": 14
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F6.png&w=640&q=75",
         "type": "Seasonal, Fruit",
         "name": "Fresh Banana",
-        "price": "$13.00"
+        "price": 13
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F5.png&w=640&q=75",
         "type": "Fish, Health",
         "name": "Fresh Fish",
-        "price": "$25.00"
+        "price": 25
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F8.png&w=640&q=75",
         "type": "Vegetables, Fruit",
         "name": "Green Avocado",
-        "price": "$6.00"
+        "price": 6
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F2.png&w=640&q=75",
         "type": "Vegetables, Winter",
         "name": "Organic Carrot",
-        "price": "$5.00"
+        "price": 5
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F5.png&w=640&q=75",
         "type": "Fish, Health",
         "name": "Fresh Fish",
-        "price": "$25.00"
+        "price": 25
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F7.png&w=640&q=75",
         "type": "Seasonal, Vegetables",
         "name": "Organic Cucumber",
-        "price": "$3.00"
+        "price": 3
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F1.png&w=640&q=75",
         "type": "Crop, Organic",
         "name": "Strawberry",
-        "price": "$12.00"
+        "price": 12
     },
     {
         "img": "https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fproducts%2F3.png&w=640&q=75",
         "type": "Fruits, Juicy",
         "name": "Fresh Red Seedless",
-        "price": "$14.00"
+        "price": 14
     }
 ]
 
@@ -235,7 +235,7 @@ function Pages({ no, currentPage, setCurrentPage }) {
 
 
 function ProductCard({ imgUrl, type, name, price, grid, setGrid }) {
-        const { cart, setCart } = useAuth();
+    const { cart, setCart } = useAuth();
 
     return (
         <div className={`rounded-lg bg-white dark:bg-gray-800 dark:text-white py-8 flex items-center
@@ -258,7 +258,7 @@ function ProductCard({ imgUrl, type, name, price, grid, setGrid }) {
                     {name}
                 </p>
                 <p className="text-[#49a760] text-2xl font-bold">
-                    {price}
+                    ${price}.00
                 </p>
                 <button className="hover:bg-[#f7c35f] cursor-pointer border-2 px-3 py-2 rounded-2xl border-[#f7c35f] flex flex-row items-center justify-center gap-3">
                     <svg
@@ -281,7 +281,21 @@ function ProductCard({ imgUrl, type, name, price, grid, setGrid }) {
                         />
                     </svg>
                     <p onClick={() => {
-                        setCart(prev => [...prev, { prodName: name, price: price, img: imgUrl }])
+                        setCart(prevCart => {
+                            const itemIndex = prevCart.findIndex(item => item.prodName === name);
+                            if (itemIndex !== -1) {
+                                const updatedCart = [...prevCart];
+                                updatedCart[itemIndex] = {
+                                    ...updatedCart[itemIndex],
+                                    quantity: updatedCart[itemIndex].quantity + 1,
+                                };
+                                return updatedCart;
+                            }
+                            else 
+                            {
+                                return [...prevCart, { prodName: name, price: price, img: imgUrl, quantity: 1 }]
+                            }
+                        })
                         console.log(cart)
                     }} className="text-sm font-semibold">ADD TO CART</p>
                 </button>

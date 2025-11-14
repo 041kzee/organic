@@ -20,14 +20,9 @@ const outfit = Outfit({
 
 export function Header() {
   const router = useRouter()
-  const { cart } = useAuth();
+  const { cart, cartTotal } = useAuth();
   const [isClicked, setIsClicked] = useState(false)
   const [isCart, setIsCart] = useState(false)
-  let cartTotal = 0
-  cart.forEach((item) => {
-    cartTotal += parseFloat(item.price.replace('$', ''))
-  })
-
 
   const handleMouseEnter = () => {
     setIsCart(true)
@@ -118,8 +113,8 @@ export function Header() {
               </span>
               🛒
               {
-                isCart && (
-                  <div className={`${outfit.className} absolute w-74 right-0 top-15 bg-white dark:bg-black p-6 dark:text-white`}>
+                isCart && cart.length !==0  && (
+                  <div className={`${outfit.className} z-100 absolute w-74 right-0 top-12 bg-white dark:bg-black p-6 dark:text-white`}>
                     {
                       cart.map((item, index) => (
                         <div className="flex border-b border-b-gray-300 flex-row gap-4 items-center py-3" key={index}>
@@ -127,8 +122,8 @@ export function Header() {
                           <div>
                             <h1 className="text-md font-semibold mb-2">{item.prodName}</h1>
                             <div className="flex flex-row gap-3 items-center">
-                              <p className="text-gray-500 font-semibold">1x</p>
-                              <p className="text-[#49a760] font-semibold text-lg">{item.price}</p>
+                              <p className="text-gray-500 font-semibold">{item.quantity}x</p>
+                              <p className="text-[#49a760] font-semibold text-lg">${item.price}.00</p>
                             </div>
                           </div>
                         </div>
@@ -138,10 +133,15 @@ export function Header() {
                       <p className="font-semibold">Total</p>
                       <p>: ${cartTotal}.00</p>
                     </div>
-                    <button className="text-white text-md font-semibold w-full py-2 mb-2 rounded-md bg-[#1f4e3d]">
+                    <button
+                      onClick={() => {
+                        router.push("/cart")
+                      }}
+                      className="text-white cursor-pointer text-md font-semibold w-full py-2 mb-2 rounded-md bg-[#1f4e3d]"
+                    >
                       CART
                     </button>
-                    <button className="text-black text-md font-semibold w-full py-2 rounded-md bg-[#f7c35f]">
+                    <button className="text-black cursor-pointer text-md font-semibold w-full py-2 rounded-md bg-[#f7c35f]">
                       CHECKOUT
                     </button>
                   </div>
