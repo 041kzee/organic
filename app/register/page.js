@@ -3,6 +3,9 @@
 import PhotoHead from "../components/PhotoHead"
 import { Outfit } from "next/font/google"
 import { useRouter } from "next/navigation"
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth"
+import { auth } from "../firebase/firebase"
+
 
 const outfit = Outfit({
     subsets: ["latin"],
@@ -10,7 +13,29 @@ const outfit = Outfit({
 })
 
 export default function RegisterPage() {
-    const router = useRouter()
+   const router = useRouter()
+
+   
+    const handleRegister = async () => {
+        try {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirm = document.getElementById("confirm").value;
+
+            if (password !== confirm) {
+                alert("Passwords do not match");
+                return;
+            }
+
+            const userCred = await createUserWithEmailAndPassword(auth, email, password);
+            await sendEmailVerification(userCred.user);
+
+            alert("Account created! A verification email has been sent.");
+        } catch (err) {
+            alert(err.message);
+        }
+    };
+
     return (
         <div className={`w-full ${outfit.className}`}>
             <PhotoHead pageName={"Register"} imageUrl={"/contact.jpg"} pageHead={"Register Page"} />
@@ -29,19 +54,24 @@ export default function RegisterPage() {
                             <input
                                 className="w-full focus:outline-2 focus:outline-blue-200 dark:focus:outline-blue-400 bg-gray-200 px-4 py-3 rounded-lg text-black placeholder:text-gray-600 focus:bg-white"
                                 type="email"
+                                id="email"
                                 placeholder="Email*"
                             />
                             <input
                                 className="w-full focus:outline-2 focus:outline-blue-200 dark:focus:outline-blue-400 bg-gray-200 px-4 py-3 rounded-lg text-black placeholder:text-gray-600 focus:bg-white"
                                 type="password"
+                                id="password"
                                 placeholder="Password*"
                             />
                             <input
                                 className="w-full focus:outline-2 focus:outline-blue-200 dark:focus:outline-blue-400 bg-gray-200 px-4 py-3 rounded-lg text-black placeholder:text-gray-600 focus:bg-white"
                                 type="password"
+                                id="confirm"
                                 placeholder="Confirm Password*"
                             />
-                            <button className="w-full bg-[#f7c35f] py-3 rounded-lg font-semibold cursor-pointer hover:bg-[#1f4e3d] hover:text-white">
+                            <button
+                             onClick={handleRegister}
+                            className="w-full bg-[#f7c35f] py-3 rounded-lg font-semibold cursor-pointer hover:bg-[#1f4e3d] hover:text-white">
                                 REGISTER
                             </button>
                             <h2 className="font-semibold text-2xl">
