@@ -1,10 +1,6 @@
 'use client';
 import { useState,useEffect } from 'react';
-
-
-
 import "./globals.css";
-import { Pacifico } from "next/font/google";
 import { Outfit } from "next/font/google";
 import { Shadows_Into_Light_Two } from 'next/font/google';
 
@@ -17,10 +13,7 @@ subsets:["latin"],
 weight: "400"
 });
 
-const pacifico = Pacifico({
-  subsets: ["latin"],
-  weight: "400"
-});
+
 
 const outfit = Outfit({
     subsets: ["latin"],
@@ -32,12 +25,12 @@ export default function Home() {
     <div>
       
       <HeroPage />
-      <br></br>
-      <AgricultureSection /><br></br>
+     
+      <AgricultureSection />
       <WhatweDo />
       <Fruits />
      <Testimonials/>
-      <br />
+     
 
       <Gallery />
       <Organic />
