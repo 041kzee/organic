@@ -85,12 +85,14 @@ export function Header() {
           <img
             src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Flogo.png&w=828&q=75"
             alt="Logo"
-            className="h-16 w-auto dark:hidden"
+            className="h-16 w-auto dark:hidden cursor-pointer"
+            onClick={() => router.push("/")}
           />
           <img
             src="logo-black.png"
             alt="Logo"
-            className="h-16 w-auto hidden dark:block"
+            className="h-16 w-auto hidden dark:block cursor-pointer"
+            onClick={() => router.push("/")}
           />
 
           <div className="hidden lg:flex flex-row gap-6">
@@ -113,7 +115,7 @@ export function Header() {
               </span>
               🛒
               {
-                isCart && cart.length !==0  && (
+                isCart && cart.length !== 0 && (
                   <div className={`${outfit.className} z-100 absolute w-74 right-0 top-12 bg-white dark:bg-black p-6 dark:text-white`}>
                     {
                       cart.map((item, index) => (

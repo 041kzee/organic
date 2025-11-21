@@ -1,5 +1,5 @@
 'use client';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 
@@ -13,8 +13,8 @@ import { Shadows_Into_Light_Two } from 'next/font/google';
 import { useRouter } from "next/navigation";
 
 const shadow = Shadows_Into_Light_Two({
-subsets:["latin"],
-weight: "400"
+  subsets: ["latin"],
+  weight: "400"
 });
 
 const pacifico = Pacifico({
@@ -23,25 +23,21 @@ const pacifico = Pacifico({
 });
 
 const outfit = Outfit({
-    subsets: ["latin"],
-    weight: ["100", "200", "300", "400", "600", "700", "800", "900"]
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "600", "700", "800", "900"]
 });
 
 export default function Home() {
   return (
     <div>
-      
+
       <HeroPage />
-      <br></br>
-      <AgricultureSection /><br></br>
+      <AgricultureSection />
       <WhatweDo />
       <Fruits />
-     <Testimonials/>
-      <br />
-
+      <Testimonials />
       <Gallery />
       <Organic />
-
       <Contact />
       <Blog />
     </div>
@@ -51,13 +47,13 @@ export default function Home() {
 
 function HeroPage() {
   const images = [
-   
-     "https://agrica-nextjs.vercel.app/assets/img/banner/4.jpg",
-  
-   "https://agrica-nextjs.vercel.app/assets/img/banner/3.jpg",
-    
-   
-   ];
+
+    "https://agrica-nextjs.vercel.app/assets/img/banner/4.jpg",
+
+    "https://agrica-nextjs.vercel.app/assets/img/banner/3.jpg",
+
+
+  ];
 
   const [index, setIndex] = useState(0);
 
@@ -75,16 +71,15 @@ function HeroPage() {
       {images.map((src, i) => (
         <div
           key={i}
-          className={`absolute inset-0 bg-cover bg-center transition-opacity  ${
-            index === i ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 bg-cover bg-center transition-opacity  ${index === i ? "opacity-100" : "opacity-0"
+            }`}
           style={{ backgroundImage: `url(${src})` }}
-          
+
         />
       ))}
 
-      
-      <div className="absolute inset-0 bg-black/50 z-10 flex items-center">
+
+      <div className="absolute inset-0 bg-black/50 z-10 flex lg:flex-row flex-col items-center">
 
         <button
           onClick={prevSlide}
@@ -100,17 +95,17 @@ function HeroPage() {
           ›
         </button>
 
-       
+
         <img
-          className="h-100 mb-70"
+          className="h-100 hidden lg:block mb-70"
           src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2F2.png&w=750&q=75"
         />
 
         <CircleTag />
 
-        
-        <div className="text-white lg:ml-40 mx-auto lg-mr-0 max-w-xl">
-          <h1 className={`${shadow.className} text-8xl font-bold`}>
+
+        <div className="text-white lg:ml-40 px-4 mx-auto lg:mt-0 mt-10 max-w-xl">
+          <h1 className={`${shadow.className} lg:text-8xl text-6xl font-bold`}>
             Homemade<br />
             Organic Product
           </h1>
@@ -136,17 +131,17 @@ function AgricultureSection() {
   return (
     <section className="w-full px-10 py-16 mx-auto flex flex-col lg:flex-row gap-12 items-start relative bg-white dark:bg-gray-800">
 
-     
+
       <img
         src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F1.png&w=256&q=75"
-    
+
         className="absolute left-15 top-1/2  hidden lg:block -translate-y-1 w-50  z-30"
       />
 
       <div className="w-full  mx-auto lg:w-1/2 relative">
         <img
           src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fabout%2F1.jpg&w=640&q=75"
-    
+
           className="mx-auto mr-4 shadow-md w-150 h-180"
         />
       </div>
@@ -188,7 +183,7 @@ function AgricultureSection() {
               </p>
             </div>
 
-            
+
             <div className="bg-[#4DA66C] dark:bg-green-700 p-8 shadow-xl h-[300px] w-[300px] text-white flex flex-col">
               <div className="mb-4">
                 <img
@@ -275,7 +270,7 @@ function WhatweDo() {
             </button>
           </div>
 
-     
+
           <div className="bg-white p-10 rounded-3xl shadow-md">
             <img
               src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F4.png&w=750&q=75"
@@ -306,7 +301,7 @@ function WhatweDo() {
 function YouTubeBackground() {
   return (
     <div className="relative w-full h-screen overflow-hidden">
-     
+
       <iframe
         className="absolute top-0 left-0 w-full h-full pointer-events-none"
         src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1&controls=0&loop=1&playlist=YLIZIMYnZlw&modestbranding=1&showinfo=0"
@@ -383,27 +378,27 @@ function Fruits() {
   return (
     <div className="flex ">
 
-<div className='flex-1'>
-   <div className="relative w-full h-[400px]  bg-[url('https://agrica-nextjs.vercel.app/assets/img/banner/17.jpg')] bg-cover bg-center">
-   <div className="absolute lg:block hidden inset-0 bg-white"></div>
+      <div className='flex-1'>
+        <div className="relative w-full h-[400px]  bg-[url('https://agrica-nextjs.vercel.app/assets/img/banner/17.jpg')] bg-cover bg-center">
+          <div className="absolute lg:block hidden inset-0 bg-white"></div>
 
- <h1 className={`absolute inset-0 flex items-center justify-center 
+          <h1 className={`absolute inset-0 flex items-center justify-center 
              text-8xl font-bold  ${shadow.className} mt-7
              bg-[url('https://agrica-nextjs.vercel.app/assets/img/banner/17.jpg')] bg-cover bg-center 
              bg-clip-text text-transparent`}>
-Healthy Life <br></br> With Fresh <br></br> Products
-  </h1>
-</div>
-</div>
+            Healthy Life <br></br> With Fresh <br></br> Products
+          </h1>
+        </div>
+      </div>
 
- 
+
       <div className="lg:flex-1 bg-[#1f4e3d] w-full overflow-hidden">
         <h1 className={` lg:hidden block ${shadow.className} text-3xl text-yellow-400 text-center mt-20 w-full`}>
           Healthy Life With Fresh <br></br> Products
         </h1>
 
 
-       
+
 
         <div className="relative z-10 grid grid-cols-3 gap-7 mt-14 py-10 px-10 ">
           {fruits.map((item, index) => (
@@ -418,17 +413,17 @@ Healthy Life <br></br> With Fresh <br></br> Products
               />
               <p className="text-white text-lg font-medium">{item.name}</p>
             </div>
-             
+
           ))}
           <div>
-           <img
-          src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2F11.png&w=384&q=75"
-          className="absolute bottom-0 right-0 w-56 opacity-70 z-0 pointer-events-none"
-        />
-</div>
+            <img
+              src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2F11.png&w=384&q=75"
+              className="absolute bottom-0 right-0 w-56 opacity-70 z-0 pointer-events-none"
+            />
+          </div>
         </div>
 
-        
+
 
       </div>
     </div>
@@ -479,7 +474,7 @@ function Gallery() {
               <p className={` ${outfit.className} text-yellow-300 text-sm uppercase font-semibold drop-shadow-lg`}>
                 {item.category}
               </p>
-              <h3 className={ `${shadow.className} text-white text-3xl font-bold drop-shadow-lg`}>
+              <h3 className={`${shadow.className} text-white text-3xl font-bold drop-shadow-lg`}>
                 {item.title}
               </h3>
             </div>
@@ -488,7 +483,7 @@ function Gallery() {
 
       </div>
     </section>
-    
+
   );
 }
 
@@ -598,59 +593,59 @@ function Organic() {
   );
 }
 function Contact() {
-    return (
-        <div className="dark:bg-black bg-green-50 py-26 flex flex-col lg:flex-row">
-            <img className="-ml-24 h-120 z-1000 self-end -mb-20 hidden lg:block" src="/man.png"></img>
-            <Message />
-            <Contact4 />
-        </div>
-    )
+  return (
+    <div className="dark:bg-black bg-green-50 py-26 flex flex-col lg:flex-row">
+      <img className="-ml-24 h-120 z-1000 self-end -mb-20 hidden lg:block" src="/man.png"></img>
+      <Message />
+      <Contact4 />
+    </div>
+  )
 }
 
 function Message() {
-    return (
-        <div className="bg-white mx-auto dark:bg-gray-800 lg:-ml-20 lg:py-20 lg:px-26 px-6 py-12 lg:flex-[50%] flex flex-col items-center gap-2">
-            <h3 className={`text-green-700 dark:text-[#f7c35f] self-start ${shadow.className} text-2xl`}>Have Questions?</h3>
-            <h2 className={`font-semibold dark:text-white self-start ${outfit.className} mb-6 text-5xl`}>Send us a message</h2>
-            <div className="w-full flex flex-col gap-4 mt-2">
-                <input className="bg-gray-100 focus:outline-2 w-full focus:outline-blue-200  py-2 px-4 rounded-lg" type="text" placeholder="Name"></input>
-                <div className="flex flex-col lg:flex-row w-full gap-4">
-                    <input className="bg-gray-100 flex-1 font-medium focus:outline-2  focus:outline-blue-200 py-2 px-4 rounded-lg" type="text" placeholder="Email"></input>
-                    <input className="bg-gray-100  flex-1 focus:outline-2  focus:outline-blue-200 py-2 px-4 rounded-lg" type="text" placeholder="Phone"></input>
-                </div>
-                <textarea className="bg-gray-100 focus:outline-2 h-40 w-full focus:outline-blue-200 py-2 px-4 rounded-lg" placeholder="Tell Us About Project"></textarea>
-            </div>
-            <button className="bg-[#f7c35f] cursor-pointer mt-2 hover:bg-[#49a760] hover:text-white self-start rounded-lg px-8 py-2 text-lg font-bold ">
-                <svg className="w-6 h-6 inline -mt-1 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
-                    <path d={"M46.137,6.552c-0.75-0.636-1.928-0.727-3.146-0.238l-0.002,0C41.708,6.828,6.728,21.832,5.304,22.445	c-0.259,0.09-2.521,0.934-2.288,2.814c0.208,1.695,2.026,2.397,2.248,2.478l8.893,3.045c0.59,1.964,2.765,9.21,3.246,10.758	c0.3,0.965,0.789,2.233,1.646,2.494c0.752,0.29,1.5,0.025,1.984-0.355l5.437-5.043l8.777,6.845l0.209,0.125	c0.596,0.264,1.167,0.396,1.712,0.396c0.421,0,0.825-0.079,1.211-0.237c1.315-0.54,1.841-1.793,1.896-1.935l6.556-34.077	C47.231,7.933,46.675,7.007,46.137,6.552z M22,32l-3,8l-3-10l23-17L22,32z"}></path>
-                </svg>
-                Get in Touch
-            </button>
+  return (
+    <div className="bg-white mx-auto dark:bg-gray-800 lg:-ml-20 lg:py-20 lg:px-26 px-6 py-12 lg:flex-[50%] flex flex-col items-center gap-2">
+      <h3 className={`text-green-700 dark:text-[#f7c35f] self-start ${shadow.className} text-2xl`}>Have Questions?</h3>
+      <h2 className={`font-semibold dark:text-white self-start ${outfit.className} mb-6 text-5xl`}>Send us a message</h2>
+      <div className="w-full flex flex-col gap-4 mt-2">
+        <input className="bg-gray-100 focus:outline-2 w-full focus:outline-blue-200  py-2 px-4 rounded-lg" type="text" placeholder="Name"></input>
+        <div className="flex flex-col lg:flex-row w-full gap-4">
+          <input className="bg-gray-100 flex-1 font-medium focus:outline-2  focus:outline-blue-200 py-2 px-4 rounded-lg" type="text" placeholder="Email"></input>
+          <input className="bg-gray-100  flex-1 focus:outline-2  focus:outline-blue-200 py-2 px-4 rounded-lg" type="text" placeholder="Phone"></input>
         </div>
-    )
+        <textarea className="bg-gray-100 focus:outline-2 h-40 w-full focus:outline-blue-200 py-2 px-4 rounded-lg" placeholder="Tell Us About Project"></textarea>
+      </div>
+      <button className="bg-[#f7c35f] cursor-pointer mt-2 hover:bg-[#49a760] hover:text-white self-start rounded-lg px-8 py-2 text-lg font-bold ">
+        <svg className="w-6 h-6 inline -mt-1 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+          <path d={"M46.137,6.552c-0.75-0.636-1.928-0.727-3.146-0.238l-0.002,0C41.708,6.828,6.728,21.832,5.304,22.445	c-0.259,0.09-2.521,0.934-2.288,2.814c0.208,1.695,2.026,2.397,2.248,2.478l8.893,3.045c0.59,1.964,2.765,9.21,3.246,10.758	c0.3,0.965,0.789,2.233,1.646,2.494c0.752,0.29,1.5,0.025,1.984-0.355l5.437-5.043l8.777,6.845l0.209,0.125	c0.596,0.264,1.167,0.396,1.712,0.396c0.421,0,0.825-0.079,1.211-0.237c1.315-0.54,1.841-1.793,1.896-1.935l6.556-34.077	C47.231,7.933,46.675,7.007,46.137,6.552z M22,32l-3,8l-3-10l23-17L22,32z"}></path>
+        </svg>
+        Get in Touch
+      </button>
+    </div>
+  )
 }
 
 function Contact4() {
-    return (
-        <div className="dark:bg-black bg-green-900 text-white dark:text-white lg:flex-[50%] flex flex-col gap-6 lg:py-20 lg:px-12 py-4 px-6">
-            <h2 className={`font-semibold relative self-start ${outfit.className} mt-4 mb-4 text-5xl`}>
-                Contact&nbsp; Information
-            </h2>
-            <p className={`text-white dark:text-white text-md ${outfit.className}`}>Plan upon yet way get cold spot its week. Almost do<br /> am or limits hearts. Resolve parties but why she<br /> shewing.</p>
-            <div>
-                <h2 className="text-lg font-semibold">Hotline</h2>
-                <p>+4733378901</p>
-            </div>
-            <div>
-                <h2 className="text-lg font-semibold">Our Location</h2>
-                <p className={`text-gray-white dark:text-white text-md ${outfit.className}`}>55 Main Street, The Grand Avenue 2nd Block,<br />New York City</p>
-            </div>
-            <div>
-                <h2 className="text-lg font-semibold">Office Email</h2>
-                <p>info@agrul.com</p>
-            </div>
-        </div>
-    )
+  return (
+    <div className="dark:bg-black bg-green-900 text-white dark:text-white lg:flex-[50%] flex flex-col gap-6 lg:py-20 lg:px-12 py-4 px-6">
+      <h2 className={`font-semibold relative self-start ${outfit.className} mt-4 mb-4 text-5xl`}>
+        Contact&nbsp; Information
+      </h2>
+      <p className={`text-white dark:text-white text-md ${outfit.className}`}>Plan upon yet way get cold spot its week. Almost do<br /> am or limits hearts. Resolve parties but why she<br /> shewing.</p>
+      <div>
+        <h2 className="text-lg font-semibold">Hotline</h2>
+        <p>+4733378901</p>
+      </div>
+      <div>
+        <h2 className="text-lg font-semibold">Our Location</h2>
+        <p className={`text-gray-white dark:text-white text-md ${outfit.className}`}>55 Main Street, The Grand Avenue 2nd Block,<br />New York City</p>
+      </div>
+      <div>
+        <h2 className="text-lg font-semibold">Office Email</h2>
+        <p>info@agrul.com</p>
+      </div>
+    </div>
+  )
 }
 function Blog() {
   const router = useRouter();
@@ -670,7 +665,7 @@ function Blog() {
 
 
         <div
-          className="relative h-[400px]  rounded-xl overflow-hidden shadow-lg cursor-pointer"
+          className="relative h-[400px] overflow-hidden shadow-lg cursor-pointer"
           onClick={goToBlog}
         >
           <img
@@ -706,29 +701,29 @@ function Blog() {
             <div className="relative">
               <img
                 src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F3.jpg&w=1920&q=75"
-                className="rounded-xl w-full h-48 object-cover bg-gray-200"
+                className="w-full h-48 object-cover bg-gray-200"
 
               />
 
-              <div className="absolute bottom-3 left-3 bg-yellow-400 px-2 py-2 rounded shadow-md">
-                <p className="text-xl font-bold">26</p>
-                <p className="text-xs bg-green-700 text-white px-2 rounded mt-1">
+              <div className={`${outfit.className} absolute text-center -mt-17 left-3 shadow-md`}>
+                <p className="text-3xl px-4 py-4 bg-yellow-400 font-bold">26</p>
+                <p className="text-xs px-4 py-1 bg-green-700 text-white">
                   Aug, 2025
                 </p>
               </div>
             </div>
 
-            <p className="text-gray-700 text-sm mt-4">
+            <p className="text-gray-700 dark:text-gray-400 text-sm mt-8">
               Md Sohag • 26 Aug, 2025
             </p>
 
-            <h3 className="text-lg font-semibold mt-1">
+            <h3 className="text-lg dark:text-white font-semibold mt-1">
               Minuter him own clothes but observe as country.
             </h3>
 
             <button
               onClick={goToBlog}
-              className="mt-3 font-semibold flex items-center gap-2 hover:text-green-700 transition"
+              className="mt-3 dark:text-white font-semibold flex items-center gap-2 hover:text-green-700 transition"
             >
               CONTINUE READING →
             </button>
@@ -739,29 +734,29 @@ function Blog() {
             <div className="relative">
               <img
                 src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F2.jpg&w=1920&q=75"
-                className="rounded-xl w-full h-48 object-cover bg-gray-200"
+                className="w-full h-48 object-cover bg-gray-200"
 
               />
 
-              <div className="absolute bottom-3 left-3 bg-yellow-400 px-2 py-2 rounded shadow-md">
-                <p className="text-xl font-bold">08</p>
-                <p className="text-xs bg-green-700 text-white px-2 w-max rounded mt-1">
+              <div className={`${outfit.className} absolute text-center -mt-17 left-3 shadow-md`}>
+                <p className="text-3xl px-4 py-4 bg-yellow-400 font-bold">08</p>
+                <p className="text-xs px-4 py-1 bg-green-700 text-white">
                   Dec, 2025
                 </p>
               </div>
             </div>
 
-            <p className="text-gray-700 text-sm mt-4">
+            <p className="text-gray-700 dark:text-gray-400 text-sm mt-8">
               Md Sohag • 08 Dec, 2025
             </p>
 
-            <h3 className="text-lg font-semibold mt-1">
+            <h3 className="text-lg font-semibold dark:text-white mt-1">
               Overcame breeding point concerns has terminate
             </h3>
 
             <button
               onClick={goToBlog}
-              className="mt-3 font-semibold flex items-center gap-2 hover:text-green-700 transition"
+              className="mt-3 dark:text-white font-semibold flex items-center gap-2 hover:text-green-700 transition"
             >
               CONTINUE READING →
             </button>
@@ -772,14 +767,14 @@ function Blog() {
     </section>
   );
 }
-function CircleTag(){
+function CircleTag() {
   return (
-    
-    <div className="relative w-40 h-40  hidden lg:flex  items-center justify-center">
-      
+
+    <div className="relative w-40 h-40 flex lg:mt-0 mt-10 items-center justify-center">
+
       <div className="absolute inset-0 rounded-full bg-black/40 backdrop-blur-sm"></div>
 
-   
+
       <svg
         viewBox="0 0 300 300"
         className="absolute w-full h-full"
@@ -881,7 +876,7 @@ function Testimonials() {
     <section className={`w-full bg-[#e8f1eb]  pt-20 px-4 ${outfit.className}`}>
 
       <div className="relative flex justify-center mb-16">
-    <img
+        <img
           src="https://agrica-nextjs.vercel.app/assets/img/shape/5.png"
         />
         <h2 className="absolute -top-8 text-4xl font-bold">
@@ -891,24 +886,24 @@ function Testimonials() {
       <div className="max-w-5xl mx-auto flex items-center">
 
         <div
-          className={`bg-white shadow-lg p-10 pl-60 w-full transition-opacity  relative duration-500 ${ fade ? "opacity-100" : "opacity-0"}`}
+          className={`bg-white shadow-lg p-10 pl-60 w-full transition-opacity  relative duration-500 ${fade ? "opacity-100" : "opacity-0"}`}
         >
-        <div className='flex-1 absolute -top-20 -left-20 '>
-        <img
-          src={t.image}
-          className="w-70 h-70 object-cover "
-        />
-        </div>
+          <div className='flex-1 absolute -top-20 -left-20 '>
+            <img
+              src={t.image}
+              className="w-70 h-70 object-cover "
+            />
+          </div>
           <img
-            src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2Fquote-big.png&w=640&q=75"className="w-12 mb-4" />
+            src="https://agrica-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2Fquote-big.png&w=640&q=75" className="w-12 mb-4" />
 
           <p className="text-gray-500 text-4xl leading-relaxed mb-6">
             “{t.text}”  </p>
 
           <div className="border-t-2 border-gray-700 my-4"></div>
-<h4 className="font-bold text-lg">{t.name}</h4>
+          <h4 className="font-bold text-lg">{t.name}</h4>
           <p className="text-green-600 text-sm mb-2">{t.role}</p>
-           <div className="text-yellow-400 text-xl">
+          <div className="text-yellow-400 text-xl">
             {"★".repeat(t.rating)}
             {"☆".repeat(5 - t.rating)}
           </div>
