@@ -38,6 +38,36 @@ Agrica is a React-based organic farming website designed to promote sustainable 
 - **Tailwind for styling**
 
 
+## Folder Structure
+
+```bash
+app/
+├── about/
+│   └── page.js
+├── blog/
+│   └── page.js
+├── cart/
+│   └── page.js
+├── components/
+│   ├── Footer.js
+│   ├── Header.js
+│   └── PhotoHead.js
+├── contact/
+│   └── page.js
+├── contexts/
+│   └── AuthContext.js
+├── firebase/
+│   └── firebase.js
+├── products/
+│   └── page.js
+├── register/
+│   └── page.js
+├── favicon.ico
+├── globals.css
+├── layout.js
+└── page.js
+```
+
 
 ## ▶️ Running the Project Locally
 
