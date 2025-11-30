@@ -23,7 +23,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <ThemeProvider attribute="class" defaultTheme="light"> */}
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
@@ -33,8 +32,6 @@ export default function RootLayout({ children }) {
             <Footer />
           </AuthProvider>
         </body>
-      {/* </ThemeProvider> */}
-
     </html>
   );
 }
