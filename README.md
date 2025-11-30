@@ -6,7 +6,7 @@ Agrica is a React-based organic farming website designed to promote sustainable 
 
 ## 🚀 Live Demo
 
-🔗 **Vercel Deployment:** *[Vercel Link Here]*
+🔗 **Vercel Deployment:** *https://organic-8r0xkpfhf-khatija-kaneezs-projects.vercel.app*
 
 
 
