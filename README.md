@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌿 Agrica – Organic Farming Website
 
-## Getting Started
+Agrica is a React-based organic farming website designed to promote sustainable and organic agriculture. The platform allows users to browse products, read blogs, register using Firebase Authentication, and manage their cart using React Context API.
 
-First, run the development server:
+
+
+## 🚀 Live Demo
+
+🔗 **Vercel Deployment:** *[Vercel Link Here]*
+
+
+
+## 📌 Features
+
+### ✔️ Firebase Authentication
+- User registration and login implemented on the **Register** page.
+
+### ✔️ Global State Management (Context API)
+- Products can be added to the cart.
+- Cart page shows total price and items added.
+
+### ✔️ Active Pages
+1. **Home**
+2. **Register** (click on the Register button to navigate)
+3. **Cart** (hover on Cart → click Cart to open)
+4. **About Us** (Pages → About Us)
+5. **Contact Us** (Pages → Contact Us)
+6. **Blog** (Click Blog in menu)
+7. **Products** (Click Shop in menu)
+
+
+## 🛠️ Tech Stack
+
+- **React.js** (Frontend)
+- **Firebase Authentication**
+- **Context API** for global state management
+- **Vercel** for hosting
+- **Tailwind for styling**
+
+
+
+## ▶️ Running the Project Locally
 
 ```bash
+# 1. Clone the repository
+git clone https://github.com/041kzee/organic.git
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Project will run at:
+# http://localhost:3000
